@@ -78,25 +78,24 @@ XGBOOST_CONFIG = {
     'classifier': 'xgboost',
     
     # Tree parameters
-    'n_estimators': 50,
-    'max_depth': 2,
-    'min_child_weight': 8,
+    'n_estimators': 100,         
+    'max_depth': 4,               
+    'min_child_weight': 3,         
     
     # Learning parameters
-    'learning_rate': 0.01,
-    'subsample': 0.5,
-    'colsample_bytree': 0.5,
+    'learning_rate': 0.05,         
+    'subsample': 0.8,              
+    'colsample_bytree': 0.8,      
     
     # Regularization
-    'gamma': 0.5,
-    'reg_alpha': 0.1,
-    'reg_lambda': 5.0,
+    'gamma': 0.1,                  
+    'reg_alpha': 0.01,             
+    'reg_lambda': 1.0,            
     
     # Other
     'objective': 'multi:softmax',
     'eval_metric': 'mlogloss',
     
-    # TF-IDF settings
     'tfidf': TFIDF_CONFIG,
 }
 
@@ -107,10 +106,10 @@ RANDOMFOREST_CONFIG = {
     'classifier': 'random_forest',
     
     # Tree parameters
-    'n_estimators': 50,
-    'max_depth': 3,
-    'min_samples_split': 10,
-    'min_samples_leaf': 5,
+    'n_estimators': 100,
+    'max_depth': 8,
+    'min_samples_split': 5,
+    'min_samples_leaf': 2,
     
     # Other
     'class_weight': 'balanced',
@@ -127,14 +126,14 @@ GRADIENTBOOSTING_CONFIG = {
     'classifier': 'gradient_boosting',
     
     # Tree parameters
-    'n_estimators': 50,
-    'max_depth': 2,
-    'min_samples_split': 10,
-    'min_samples_leaf': 5,
+    'n_estimators': 100,
+    'max_depth': 4,
+    'min_samples_split': 5,
+    'min_samples_leaf': 2,
     
     # Learning parameters
-    'learning_rate': 0.05,
-    'subsample': 0.5,
+    'learning_rate': 0.01,
+    'subsample': 0.8,
     
     # TF-IDF settings
     'tfidf': TFIDF_CONFIG,

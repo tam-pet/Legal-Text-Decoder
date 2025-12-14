@@ -521,8 +521,6 @@ def main():
     test_df['text'] = test_df['text'].apply(clean_text)
     test_df = test_df[test_df['text'].str.len() > 0]
     
-    print(test_df)
-    
     logger.info(f"Loaded {len(test_df)} test samples")
     
     # Log test data distribution

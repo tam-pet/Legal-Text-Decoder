@@ -36,7 +36,7 @@ A projekt célja egy természetes nyelvfeldolgozási (NLP) modell létrehozása,
 A projekt inkrementális modellezési megközelítést alkalmaz:
 
 #### 1. Baseline Model (TF-IDF + Logistic Regression)
-- **Feature Extraction**: TF-IDF vectorizer (max 1500 features, unigrams + bigrams + trigrams)
+- **Feature Extraction**: TF-IDF vectorizer (max 500 features, unigrams + bigrams)
 - **Classifier**: Multinomial Logistic Regression with class balancing
 - **Purpose**: Egyszerű referencia modell, amit a fejlettebb modellek próbálnak megverni
 
@@ -94,46 +94,13 @@ A következő elemek miatt pályázom a +1 jegyre:
 4. **Clean**: Szöveg tisztítás (whitespace, special characters)
 5. **All Annotations**: Teszt adatoknál minden annotáció külön kiértékelődik
 
-### Data Format
-
-**Input (Label Studio JSON)**:
-```json
-{
-  "data": {"text": "Jogi szöveg..."},
-  "annotations": [{"result": [{"value": {"choices": ["3-Többé/kevésbé megértem"]}}]}]
-}
-```
-
-**Output (CSV)**:
-```csv
-text,label
-"Jogi szöveg...",3
-```
-
 ---
 
 ## Gyors Futtatás
 
-### Módszer 1: Quick Start Script (Windows)
+### Módszer: Docker
 
-```powershell
-.\quick_start.ps1
-```
-
-Ez automatikusan:
-- ✅ Ellenőrzi a Python verziót
-- ✅ Létrehozza a virtuális környezetet
-- ✅ Telepíti a függőségeket
-- ✅ Futtatja a teljes pipeline-t
-
-### Módszer 2: Bash Script (Linux/Mac)
-
-```bash
-chmod +x run.sh
-./run.sh
-```
-
-### Módszer 3: Docker
+Run the following command in the root directory of the repository to build the Docker image:
 
 ```bash
 # Build
@@ -144,14 +111,14 @@ docker run --rm \
   -v $(pwd)/models:/app/models \
   -v $(pwd)/data:/app/data \
   -v $(pwd)/log:/app/log \
-  legal-text-decoder
+  legal-text-decoder > log/run.log 2>&1
 
 # Windows PowerShell:
 docker run --rm `
   -v ${PWD}/models:/app/models `
   -v ${PWD}/data:/app/data `
   -v ${PWD}/log:/app/log `
-  legal-text-decoder
+  legal-text-decoder > log/run.log 2>&1
 ```
 
 ---
@@ -187,52 +154,6 @@ LegalTextDecoder/
 └── README.md                 # This file
 ```
 
-
----
-
-## Usage Examples
-
-### Python API
-
-```python
-from src.a04_inference import load_models, predict_single
-from src.config import MODEL_DIR, LOG_DIR
-from src.utils import setup_logger
-
-# Setup
-logger = setup_logger("Demo", LOG_DIR / "run.log")
-
-# Load all models
-models = load_models(MODEL_DIR, logger)
-
-# Predict
-text = "A Szolgáltató fenntartja a jogot..."
-result = predict_single(text, models)
-
-print(f"Rating: {result['ensemble']['prediction']}")
-print(f"Description: {result['ensemble']['description']}")
-
-# Individual model predictions
-for model_name, pred in result['predictions'].items():
-    print(f"{model_name}: {pred['prediction']}")
-```
-
-### Command Line
-
-```bash
-# Single text
-python src/a04_inference.py --text "Jogi szöveg..."
-
-# File prediction
-python src/a04_inference.py --input texts.txt --output predictions.csv
-
-# Interactive mode
-python src/a04_inference.py --interactive
-
-# Use specific model only
-python src/a04_inference.py --model baseline --text "Jogi szöveg..."
-```
-
 ---
 
 ## Requirements
@@ -244,8 +165,3 @@ python src/a04_inference.py --model baseline --text "Jogi szöveg..."
 - matplotlib, seaborn
 - See `requirements.txt` for full list
 
----
-
-## License
-
-This project was created for educational purposes as part of the Deep Learning (VITMMA19) course at BME.

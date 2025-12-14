@@ -27,9 +27,12 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy source code
 COPY src/ ./src/
+COPY run.sh .
+
 
 # Create necessary directories
 RUN mkdir -p /app/data/raw /app/data/processed /app/models /app/log
+
 
 RUN chmod +x run.sh
 
