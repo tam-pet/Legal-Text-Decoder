@@ -1,42 +1,42 @@
 {
   "baseline": {
-    "cv_accuracy": 0.3276190476190476,
-    "cv_accuracy_std": 0.07342603911389099,
-    "cv_f1_macro": 0.3015841935841935,
-    "cv_f1_macro_std": 0.11026406586797886,
-    "val_accuracy": 0.3125,
-    "val_f1_macro": 0.21333333333333332,
-    "val_mae": 0.875,
-    "val_cohen_kappa": 0.0736842105263158
+    "cv_accuracy": 0.35619047619047617,
+    "cv_accuracy_std": 0.09944973319776468,
+    "cv_f1_macro": 0.32313575313575316,
+    "cv_f1_macro_std": 0.14510689235696805,
+    "val_accuracy": 0.25,
+    "val_f1_macro": 0.15272727272727274,
+    "val_mae": 1.0,
+    "val_cohen_kappa": -0.02127659574468077
   },
   "xgboost": {
-    "cv_accuracy": 0.3566666666666666,
-    "cv_accuracy_std": 0.11025017932328424,
-    "cv_f1_macro": 0.2085120376699324,
-    "cv_f1_macro_std": 0.08475325223520237,
-    "val_accuracy": 0.25,
-    "val_f1_macro": 0.13015873015873014,
-    "val_mae": 0.9375,
-    "val_cohen_kappa": -0.037837837837837895
+    "cv_accuracy": 0.37523809523809526,
+    "cv_accuracy_std": 0.09779426783233094,
+    "cv_f1_macro": 0.22086586807249073,
+    "cv_f1_macro_std": 0.062094114948525035,
+    "val_accuracy": 0.3125,
+    "val_f1_macro": 0.15714285714285714,
+    "val_mae": 1.125,
+    "val_cohen_kappa": 0.027624309392265234
   },
   "random_forest": {
-    "cv_accuracy": 0.3171428571428571,
-    "cv_accuracy_std": 0.020337291908631067,
-    "cv_f1_macro": 0.2419017844900198,
-    "cv_f1_macro_std": 0.09117301987134849,
-    "val_accuracy": 0.125,
-    "val_f1_macro": 0.06153846153846154,
-    "val_mae": 1.0625,
-    "val_cohen_kappa": -0.20430107526881724
+    "cv_accuracy": 0.2790476190476191,
+    "cv_accuracy_std": 0.12232071891811293,
+    "cv_f1_macro": 0.251004995004995,
+    "cv_f1_macro_std": 0.15220474005880638,
+    "val_accuracy": 0.1875,
+    "val_f1_macro": 0.16153846153846155,
+    "val_mae": 1.0,
+    "val_cohen_kappa": -0.1063829787234043
   },
   "gradient_boosting": {
-    "cv_accuracy": 0.37476190476190474,
-    "cv_accuracy_std": 0.03256251618529287,
-    "cv_f1_macro": 0.2925580497933439,
-    "cv_f1_macro_std": 0.06542363475017822,
-    "val_accuracy": 0.1875,
-    "val_f1_macro": 0.10598290598290598,
-    "val_mae": 1.125,
-    "val_cohen_kappa": -0.10052910052910047
+    "cv_accuracy": 0.3357142857142857,
+    "cv_accuracy_std": 0.04785655057676614,
+    "cv_f1_macro": 0.2318946608946609,
+    "cv_f1_macro_std": 0.04173956631957711,
+    "val_accuracy": 0.3125,
+    "val_f1_macro": 0.18,
+    "val_mae": 0.875,
+    "val_cohen_kappa": 0.05882352941176472
   }
 }
