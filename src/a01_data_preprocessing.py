@@ -160,81 +160,67 @@ def load_training_data(data_dir: Path, neptun_code: str, logger) -> List[Tuple[s
     logger.info(f"Total training samples: {len(all_data)}")
     return all_data
 
-
-def load_consensus_data(data_dir: Path, consensus_folder: str, logger) -> List[Tuple[str, int, float]]:
+def load_test_data(data_dir: Path, test_folder: str, logger) -> List[Tuple[str, int]]:
     """
-    Load test data with consensus labels from multiple annotators.
+    Load test data from all annotators - each annotation is a separate sample.
+    No grouping or consensus calculation - every single annotation is evaluated independently.
     
     Args:
         data_dir: Base data directory
-        consensus_folder: Consensus folder name
+        test_folder: Test folder name (consensus folder with all annotator files)
         logger: Logger instance
         
     Returns:
-        List of (text, consensus_rating, agreement_score) tuples
+        List of (text, rating) tuples - one per annotation
     """
-    logger.info(f"Loading consensus data from {consensus_folder} folder")
+    logger.info(f"Loading test data from {test_folder} folder")
     
-    consensus_dir = data_dir / consensus_folder
+    test_dir = data_dir / test_folder
     
-    if not consensus_dir.exists():
+    if not test_dir.exists():
         # Try to find it in subdirectories
-        for subdir in data_dir.rglob(consensus_folder):
+        for subdir in data_dir.rglob(test_folder):
             if subdir.is_dir():
-                consensus_dir = subdir
+                test_dir = subdir
                 break
     
-    if not consensus_dir.exists():
-        logger.warning(f"Consensus folder {consensus_folder} not found")
+    if not test_dir.exists():
+        logger.warning(f"Test folder {test_folder} not found")
         return []
     
-    json_files = find_json_files(consensus_dir)
-    logger.info(f"Found {len(json_files)} JSON files in consensus folder")
+    json_files = find_json_files(test_dir)
+    logger.info(f"Found {len(json_files)} JSON files in test folder")
     
-    # Group annotations by text
-    text_annotations: Dict[str, List[int]] = {}
+    # Collect ALL annotations - no grouping, each annotation is a separate sample
+    all_data = []
     
     for json_file in json_files:
         try:
             data = load_json_annotations(json_file)
             parsed = parse_label_studio_export(data)
             
-            for text, rating in parsed:
-                clean = clean_text(text)
-                if clean not in text_annotations:
-                    text_annotations[clean] = []
-                text_annotations[clean].append(rating)
+            if not parsed:
+                logger.warning(f"  {json_file.name} contains no valid annotations, skipping")
+                continue
             
-            logger.info(f"  Loaded annotations from {json_file.name}")
+            all_data.extend(parsed)
+            logger.info(f"  Loaded {len(parsed)} samples from {json_file.name}")
         except Exception as e:
             logger.warning(f"  Failed to load {json_file.name}: {e}")
     
-    # Calculate consensus
-    consensus_data = []
-    for text, annotations in text_annotations.items():
-        consensus_label, agreement = calculate_consensus_label(annotations, method="majority")
-        if consensus_label is not None:
-            consensus_data.append((text, consensus_label, agreement))
+    logger.info(f"\nTotal test samples: {len(all_data)}")
     
-    logger.info(f"Total consensus samples: {len(consensus_data)}")
-    
-    # Log agreement statistics
-    agreements = [d[2] for d in consensus_data]
-    logger.info(f"Agreement statistics: mean={np.mean(agreements):.3f}, "
-                f"min={np.min(agreements):.3f}, max={np.max(agreements):.3f}")
-    
-    return consensus_data
-
+    return all_data
 
 def analyze_data(train_data: List[Tuple[str, int]], 
-                 test_data: List[Tuple[str, int, float]], 
+                 test_data: List[Tuple[str, int]], 
                  logger) -> Dict[str, Any]:
     """
     Analyze the dataset and log statistics.
     
     Args:
-        train_data: Training data
-        test_data: Test data with consensus
+        train_data: Training data (text, label) tuples
+        test_data: Test data (text, label) tuples
         logger: Logger instance
         
     Returns:
@@ -273,13 +259,13 @@ def analyze_data(train_data: List[Tuple[str, int]],
     
     # Test data analysis
     if test_data:
-        test_texts, test_labels, test_agreements = zip(*test_data)
+        test_texts, test_labels = zip(*test_data)
         
         test_label_dist = Counter(test_labels)
         stats['test_size'] = len(test_data)
         stats['test_label_distribution'] = dict(sorted(test_label_dist.items()))
         
-        logger.info("\n--- Test Data (Consensus) ---")
+        logger.info("\n--- Test Data (All Annotations) ---")
         logger.info(f"Number of samples: {len(test_data)}")
         logger.info("Label distribution:")
         for label in sorted(test_label_dist.keys()):
@@ -287,14 +273,13 @@ def analyze_data(train_data: List[Tuple[str, int]],
             pct = count / len(test_data) * 100
             logger.info(f"  Rating {label}: {count} ({pct:.1f}%)")
         
-        # Agreement statistics
-        stats['avg_agreement'] = np.mean(test_agreements)
-        logger.info(f"Average annotator agreement: {stats['avg_agreement']:.3f}")
-        
         # Text statistics
         text_lengths = [len(t.split()) for t in test_texts]
         stats['test_avg_words'] = np.mean(text_lengths)
-        logger.info(f"Text length (words): mean={stats['test_avg_words']:.1f}")
+        stats['test_min_words'] = np.min(text_lengths)
+        stats['test_max_words'] = np.max(text_lengths)
+        logger.info(f"Text length (words): mean={stats['test_avg_words']:.1f}, "
+                    f"min={stats['test_min_words']}, max={stats['test_max_words']}")
     
     logger.info("=" * 60)
     
@@ -302,15 +287,15 @@ def analyze_data(train_data: List[Tuple[str, int]],
 
 
 def save_processed_data(train_data: List[Tuple[str, int]],
-                        test_data: List[Tuple[str, int, float]],
+                        test_data: List[Tuple[str, int]],
                         output_dir: Path,
                         logger) -> None:
     """
     Save processed data to CSV files.
     
     Args:
-        train_data: Training data
-        test_data: Test data with consensus
+        train_data: Training data (text, label) tuples
+        test_data: Test data (text, label) tuples
         output_dir: Output directory
         logger: Logger instance
     """
@@ -326,7 +311,7 @@ def save_processed_data(train_data: List[Tuple[str, int]],
     
     # Save test data
     if test_data:
-        test_df = pd.DataFrame(test_data, columns=['text', 'label', 'agreement'])
+        test_df = pd.DataFrame(test_data, columns=['text', 'label'])
         test_df['label'] = test_df['label'].astype(int)
         test_path = output_dir / "test.csv"
         test_df.to_csv(test_path, index=False, encoding='utf-8')
@@ -380,9 +365,9 @@ def main():
         logger.info("\n[Step 3] Loading training data...")
         train_data = load_training_data(data_dir, TRAIN_FOLDER, logger)
         
-        # Step 4: Load test/consensus data
-        logger.info("\n[Step 4] Loading consensus test data...")
-        test_data = load_consensus_data(data_dir, TEST_FOLDER, logger)
+        # Step 4: Load test data (all annotations)
+        logger.info("\n[Step 4] Loading test data (all annotations)...")
+        test_data = load_test_data(data_dir, TEST_FOLDER, logger)
         
         # Step 5: Analyze data
         logger.info("\n[Step 5] Analyzing data...")

@@ -9,7 +9,7 @@
 | Field | Value |
 |-------|-------|
 | **Selected Topic** | Legal Text Decoder |
-| **Student Name** | Petrich Tamás |
+| **Student Name** | Petrich Tamás Ákos |
 | **Neptun Code** | FA0B9B |
 | **Aiming for +1 Mark** | Yes |
 
@@ -33,27 +33,27 @@ A projekt célja egy természetes nyelvfeldolgozási (NLP) modell létrehozása,
 
 ### Model Architecture
 
-A projekt két fő modellt tartalmaz:
+A projekt inkrementális modellezési megközelítést alkalmaz:
 
 #### 1. Baseline Model (TF-IDF + Logistic Regression)
-- **Feature Extraction**: TF-IDF vectorizer (max 5000 features, unigrams + bigrams)
+- **Feature Extraction**: TF-IDF vectorizer (max 1500 features, unigrams + bigrams + trigrams)
 - **Classifier**: Multinomial Logistic Regression with class balancing
-- **Purpose**: Gyors, interprethálható baseline eredmények
+- **Purpose**: Egyszerű referencia modell, amit a fejlettebb modellek próbálnak megverni
 
-#### 2. Transformer Model (HuBERT)
-- **Pre-trained Model**: SZTAKI-HLT/hubert-base-cc (Hungarian BERT)
-- **Architecture**: BERT encoder + classification head
-- **Max Sequence Length**: 256 tokens
-- **Training**: Fine-tuned with AdamW optimizer, linear warmup scheduler
-- **Regularization**: Dropout (0.1), Early stopping, Class weighting
+#### 2. Advanced Models (TF-IDF + Ensemble Methods)
+- **XGBoost**: Gradient boosting regularizációval
+- **Random Forest**: Döntési fák ensemble-je
+- **Gradient Boosting**: Sklearn gradient boosting implementáció
+
+Minden modell ugyanazt a TF-IDF feature extraction-t használja a fair összehasonlíthatóság érdekében.
 
 ### Training Methodology
 
 1. **Data Loading**: Label Studio JSON exports feldolgozása
 2. **Preprocessing**: Szöveg tisztítás, tokenizáció
-3. **Training/Validation Split**: 80/20 stratified split
-4. **Training**: Cross-entropy loss with class weights
-5. **Model Selection**: Early stopping based on validation F1 score
+3. **K-Fold Cross-Validation**: 5-fold stratified CV minden modellhez
+4. **Training/Validation Split**: 85/15 stratified split
+5. **Model Selection**: CV F1 Macro score alapján
 
 ### Evaluation Metrics
 
@@ -62,6 +62,7 @@ A projekt két fő modellt tartalmaz:
 - **Mean Absolute Error (MAE)**: Rating prediction error
 - **Cohen's Kappa**: Inter-rater agreement proxy
 - **Confusion Matrix**: Detailed error analysis
+- **Per-Label Precision/Recall/F1**: Label-szintű metrikák
 
 ---
 
@@ -69,20 +70,21 @@ A projekt két fő modellt tartalmaz:
 
 A következő elemek miatt pályázom a +1 jegyre:
 
-1. **Átfogó megoldás**: Baseline és fejlett transformer modell összehasonlítása
-2. **Magyar nyelvi modell**: HuBERT fine-tuning specifikusan magyar jogi szövegekre
-3. **Consensus alapú tesztelés**: Több annotátor egyetértésének figyelembevétele
-4. **Részletes kiértékelés**: Többféle metrika, confusion matrix, model comparison
+1. **Inkrementális modellezés**: Baseline és többféle advanced modell összehasonlítása
+2. **K-Fold Cross-Validation**: Megbízható teljesítmény becslés kis adathalmazon
+3. **Teljes annotátor kiértékelés**: Minden annotátor minden értékelése külön kiértékelődik (~2500 teszt minta)
+4. **Részletes kiértékelés**: Többféle metrika, confusion matrix, per-sample analysis
 5. **Tiszta, moduláris kód**: Jól strukturált, dokumentált Python kód
 6. **Docker kontainerizáció**: Teljes reprodukálhatóság
+7. **Ensemble prediction**: Több modell kombinálása az inference során
 
 ---
 
 ## Data Preparation
 
 ### Data Source
-- **Training**: FA0B9B neptun kódos mappa annotációi
-- **Test**: Consensus mappa (több annotátor közös címkézése)
+- **Training**: FA0B9B neptun kódos mappa annotációi (~100 minta)
+- **Test**: Consensus mappa összes annotációja (~2500 minta) - minden annotátor minden értékelése külön sample
 
 ### Processing Steps
 
@@ -90,7 +92,7 @@ A következő elemek miatt pályázom a +1 jegyre:
 2. **Extract**: ZIP fájl kicsomagolása
 3. **Parse**: Label Studio JSON export formátum feldolgozása
 4. **Clean**: Szöveg tisztítás (whitespace, special characters)
-5. **Consensus Calculation**: Teszt adatoknál majority voting
+5. **All Annotations**: Teszt adatoknál minden annotáció külön kiértékelődik
 
 ### Data Format
 
@@ -110,7 +112,7 @@ text,label
 
 ---
 
-## 🚀 Gyors Futtatás
+## Gyors Futtatás
 
 ### Módszer 1: Quick Start Script (Windows)
 
@@ -124,26 +126,14 @@ Ez automatikusan:
 - ✅ Telepíti a függőségeket
 - ✅ Futtatja a teljes pipeline-t
 
-### Módszer 2: Manuális (Lokálisan)
+### Módszer 2: Bash Script (Linux/Mac)
 
-```powershell
-# 1. Virtuális környezet
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-
-# 2. Függőségek
-pip install -r requirements.txt
-
-# 3. Python path
-$env:PYTHONPATH = "$PWD\src"
-
-# 4. Futtatás
-python main.py
+```bash
+chmod +x run.sh
+./run.sh
 ```
 
-**Várható futásidő**: 30-60 perc (CPU), 10-20 perc (GPU)
-
-### Módszer 3: Docker (Bárhol)
+### Módszer 3: Docker
 
 ```bash
 # Build
@@ -151,45 +141,18 @@ docker build -t legal-text-decoder .
 
 # Run - teljes pipeline
 docker run --rm \
-  -v $(pwd)/data:/app/data \
   -v $(pwd)/models:/app/models \
+  -v $(pwd)/data:/app/data \
   -v $(pwd)/log:/app/log \
   legal-text-decoder
 
 # Windows PowerShell:
 docker run --rm `
-  -v ${PWD}/data:/app/data `
   -v ${PWD}/models:/app/models `
+  -v ${PWD}/data:/app/data `
   -v ${PWD}/log:/app/log `
   legal-text-decoder
-
-# GPU támogatással
-docker run --rm --gpus all \
-  -v $(pwd)/data:/app/data \
-  -v $(pwd)/models:/app/models \
-  legal-text-decoder
 ```
-
-### Lépésenkénti Futtatás
-
-```powershell
-# Csak adat feldolgozás
-python src\a01_data_preprocessing.py
-
-# Csak tanítás
-python src\a02_training.py
-
-# Csak kiértékelés
-python src\a03_evaluation.py
-
-# Inference egyetlen szövegre
-python src\a04_inference.py --text "Az ÁSZF módosításáról e-mailben értesítjük."
-
-# Interaktív mód
-python src\a04_inference.py --interactive
-```
-
-**📖 Részletes útmutató**: Lásd [HOGYAN_FUTTASSAM.md](HOGYAN_FUTTASSAM.md)
 
 ---
 
@@ -200,10 +163,10 @@ LegalTextDecoder/
 ├── src/
 │   ├── config.py              # Configuration and hyperparameters
 │   ├── utils.py               # Utility functions and logging
-│   ├── 01_data_preprocessing.py   # Data loading and preparation
-│   ├── 02_training.py         # Model training (baseline + transformer)
-│   ├── 03_evaluation.py       # Model evaluation on test set
-│   └── 04_inference.py        # Prediction on new texts
+│   ├── a01_data_preprocessing.py  # Data loading and preparation
+│   ├── a02_training.py        # Model training (baseline + advanced)
+│   ├── a03_evaluation.py      # Model evaluation on test set
+│   └── a04_inference.py       # Prediction on new texts
 ├── notebook/
 │   ├── 01_data_exploration.ipynb  # EDA and visualization
 │   └── 02_label_analysis.ipynb    # Label distribution analysis
@@ -211,60 +174,19 @@ LegalTextDecoder/
 │   ├── raw/                   # Downloaded data
 │   └── processed/             # Prepared train/test CSVs
 ├── models/
-│   ├── baseline_model.pkl     # Trained baseline model
-│   └── transformer/           # Trained transformer model
+│   ├── baseline_model.pkl     # Trained baseline (LogReg)
+│   ├── xgboost_model.pkl      # Trained XGBoost
+│   ├── random_forest_model.pkl    # Trained RandomForest
+│   ├── gradient_boosting_model.pkl # Trained GradientBoosting
+│   └── evaluation/            # Evaluation results and plots
 ├── log/
 │   └── run.log               # Training and evaluation logs
 ├── Dockerfile                # Docker configuration
+├── run.sh                    # Bash runner script
 ├── requirements.txt          # Python dependencies
 └── README.md                 # This file
 ```
 
----
-
-## Configuration
-
-Key hyperparameters (in `src/config.py`):
-
-### Baseline Model
-| Parameter | Value |
-|-----------|-------|
-| TF-IDF Max Features | 5000 |
-| N-gram Range | (1, 2) |
-| Classifier | Logistic Regression |
-| Class Weight | Balanced |
-
-### Transformer Model
-| Parameter | Value |
-|-----------|-------|
-| Model | SZTAKI-HLT/hubert-base-cc |
-| Max Length | 256 |
-| Batch Size | 16 |
-| Learning Rate | 2e-5 |
-| Epochs | 10 |
-| Warmup Ratio | 0.1 |
-| Dropout | 0.1 |
-| Early Stopping | 3 epochs |
-
----
-
-## Results
-
-*Results will be populated after training*
-
-### Validation Set
-
-| Model | Accuracy | F1 (Macro) | F1 (Weighted) | MAE |
-|-------|----------|------------|---------------|-----|
-| Baseline | - | - | - | - |
-| Transformer | - | - | - | - |
-
-### Test Set (Consensus)
-
-| Model | Accuracy | F1 (Macro) | F1 (Weighted) | MAE |
-|-------|----------|------------|---------------|-----|
-| Baseline | - | - | - | - |
-| Transformer | - | - | - | - |
 
 ---
 
@@ -273,30 +195,42 @@ Key hyperparameters (in `src/config.py`):
 ### Python API
 
 ```python
-from src.04_inference import load_models, predict_single
+from src.a04_inference import load_models, predict_single
+from src.config import MODEL_DIR, LOG_DIR
+from src.utils import setup_logger
 
-# Load models
-baseline, transformer, tokenizer = load_models(MODEL_DIR, 'cuda', logger)
+# Setup
+logger = setup_logger("Demo", LOG_DIR / "run.log")
+
+# Load all models
+models = load_models(MODEL_DIR, logger)
 
 # Predict
 text = "A Szolgáltató fenntartja a jogot..."
-result = predict_single(text, baseline, transformer, tokenizer, 'cuda')
+result = predict_single(text, models)
 
 print(f"Rating: {result['ensemble']['prediction']}")
 print(f"Description: {result['ensemble']['description']}")
+
+# Individual model predictions
+for model_name, pred in result['predictions'].items():
+    print(f"{model_name}: {pred['prediction']}")
 ```
 
 ### Command Line
 
 ```bash
 # Single text
-python src/04_inference.py --text "Jogi szöveg..."
+python src/a04_inference.py --text "Jogi szöveg..."
 
 # File prediction
-python src/04_inference.py --input texts.txt --output predictions.csv
+python src/a04_inference.py --input texts.txt --output predictions.csv
 
 # Interactive mode
-python src/04_inference.py --interactive
+python src/a04_inference.py --interactive
+
+# Use specific model only
+python src/a04_inference.py --model baseline --text "Jogi szöveg..."
 ```
 
 ---
@@ -304,8 +238,10 @@ python src/04_inference.py --interactive
 ## Requirements
 
 - Python 3.10+
-- PyTorch 2.0+
-- CUDA 11.8+ (optional, for GPU support)
+- scikit-learn
+- xgboost
+- pandas, numpy
+- matplotlib, seaborn
 - See `requirements.txt` for full list
 
 ---

@@ -493,6 +493,7 @@ def main():
     
     train_df = pd.read_csv(train_path)
     logger.info(f"Loaded {len(train_df)} training samples")
+        
     
     # Clean texts
     train_df['text'] = train_df['text'].apply(clean_text)

@@ -1,0 +1,182 @@
+[
+  {
+    "id": 5,
+    "annotations": [
+      {
+        "id": 3,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "choices": [
+                "3-Többé/kevésbé megértem"
+              ]
+            },
+            "id": "HqX6eQmS0U",
+            "from_name": "sentiment",
+            "to_name": "text",
+            "type": "choices",
+            "origin": "manual"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-09-30T21:40:56.998002Z",
+        "updated_at": "2025-09-30T21:40:56.998013Z",
+        "draft_created_at": null,
+        "lead_time": 10.2,
+        "prediction": {},
+        "result_count": 1,
+        "unique_id": "d9720645-f755-441b-8a45-617ad1041f62",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 5,
+        "project": 2,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "45642249-pelda-aszf.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "1.2    Az ÁSZF hatálya kiterjed a Magyarország területén nyújtott minden olyan elektronikus kereskedelmi szolgáltatásra, amely a Szolgáltató által üzemeltetett www.qweqwe.hu webcímen található Webáruházon keresztül történik. A Webáruházban történő vásárlást az elektronikus kereskedelmi szolgáltatások, az információs társadalommal összefüggő szolgáltatások egyes kérdéseiről szóló 2001. évi CVIII. törvény (\"Elkertv.\") szabályozza."
+    },
+    "meta": {},
+    "created_at": "2025-09-30T21:39:48.983400Z",
+    "updated_at": "2025-09-30T21:40:57.023240Z",
+    "inner_id": 3,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 6,
+    "annotations": [
+      {
+        "id": 4,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "choices": [
+                "4-Érthető"
+              ]
+            },
+            "id": "1nKFEevUwG",
+            "from_name": "sentiment",
+            "to_name": "text",
+            "type": "choices",
+            "origin": "manual"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-09-30T21:41:08.855286Z",
+        "updated_at": "2025-09-30T21:41:08.855298Z",
+        "draft_created_at": null,
+        "lead_time": 9.744,
+        "prediction": {},
+        "result_count": 1,
+        "unique_id": "976506aa-34fb-43f1-9e3c-ccd4bd29f94b",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 6,
+        "project": 2,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "45642249-pelda-aszf.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "1.3    A felhasználói fiók létrehozásnak, illetve a Webáruházban történő megrendelés leadásának feltétele, hogy a Felhasználó elfogadja és magára nézve kötelezőnek ismerje el a jelen ÁSZF-ben foglaltakat."
+    },
+    "meta": {},
+    "created_at": "2025-09-30T21:39:48.983437Z",
+    "updated_at": "2025-09-30T21:41:08.879402Z",
+    "inner_id": 4,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": 1,
+    "comment_authors": []
+  },
+  {
+    "id": 7,
+    "annotations": [
+      {
+        "id": 5,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "choices": [
+                "3-Többé/kevésbé megértem"
+              ]
+            },
+            "id": "Kg7iWksJcF",
+            "from_name": "sentiment",
+            "to_name": "text",
+            "type": "choices",
+            "origin": "manual"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2025-09-30T21:41:20.703411Z",
+        "updated_at": "2025-09-30T21:41:20.703422Z",
+        "draft_created_at": null,
+        "lead_time": 10.548,
+        "prediction": {},
+        "result_count": 1,
+        "unique_id": "c3eb0d17-1653-4ac4-9b46-14bb7368d58a",
+        "import_id": null,
+        "last_action": null,
+        "bulk_created": false,
+        "task": 7,
+        "project": 2,
+        "updated_by": 1,
+        "parent_prediction": null,
+        "parent_annotation": null,
+        "last_created_by": null
+      }
+    ],
+    "file_upload": "45642249-pelda-aszf.txt",
+    "drafts": [],
+    "predictions": [],
+    "data": {
+      "text": "1.4    A Webáruházban történő vásárlás elektronikus úton leadott megrendeléssel lehetséges, a jelen ÁSZF-ben meghatározott módon. Felhívjuk szíves figyelmüket arra, hogy jogi szempontból a Webáruházban leadott megrendelések ráutaló magatartás formájában tett ajánlatnak minősülnek, amelyek alapján az adásvételi szerződés a Szolgáltató Megrendelésre vonatkozó megerősítésével jön létre. A létrejött szerződés nem minősül írásbeli szerződésnek, iktatásra nem kerül, így utólag nem hozzáférhető. A szerződés létrejöttét az elektronikusan elmentett vásárlási adatok igazolják, amelyeket a Szolgáltató a számvitelre és adózásra vonatkozó jogszabályokban meghatározott határideig őriz."
+    },
+    "meta": {},
+    "created_at": "2025-09-30T21:39:48.983475Z",
+    "updated_at": "2025-09-30T21:41:20.727622Z",
+    "inner_id": 5,
+    "total_annotations": 1,
+    "cancelled_annotations": 0,
+    "total_predictions": 0,
+    "comment_count": 0,
+    "unresolved_comment_count": 0,
+    "last_comment_updated_at": null,
+    "project": 2,
+    "updated_by": 1,
+    "comment_authors": []
+  }
+]
