@@ -724,41 +724,46 @@ def train_baseline_model(train_df: pd.DataFrame,
 # Transformer Model
 # =============================================================================
 
+
 class TransformerClassifier(nn.Module):
-    """BERT-based classifier for legal text with additional regularization."""
+    """BERT-based classifier using AutoModelForSequenceClassification."""
     
     def __init__(self, model_name: str, num_classes: int, dropout: float = 0.3, freeze_layers: int = 0):
         super().__init__()
-        self.bert = AutoModel.from_pretrained(model_name)
         
-        # Freeze first N layers
+        # ===== JAVÍTVA: AutoModelForSequenceClassification =====
+        from transformers import AutoConfig
+        
+        config = AutoConfig.from_pretrained(model_name)
+        config.num_labels = num_classes
+        config.problem_type = "single_label_classification"
+        config.hidden_dropout_prob = dropout
+        config.attention_probs_dropout_prob = dropout
+        
+        self.model = AutoModelForSequenceClassification.from_pretrained(
+            model_name,
+            config=config
+        )
+        
+        # Freeze first N layers (BERT has 12 layers)
         if freeze_layers > 0:
-            for i, layer in enumerate(self.bert.encoder.layer):
-                if i < freeze_layers:
-                    for param in layer.parameters():
-                        param.requires_grad = False
-        
-        hidden_size = self.bert.config.hidden_size
-        
-        # Multi-layer classifier head for better learning
-        self.dropout1 = nn.Dropout(dropout)
-        self.fc1 = nn.Linear(hidden_size, hidden_size // 2)
-        self.relu = nn.ReLU()
-        self.dropout2 = nn.Dropout(dropout * 0.5)
-        self.classifier = nn.Linear(hidden_size // 2, num_classes)
+            # Freeze embeddings
+            for param in self.model.bert.embeddings.parameters():
+                param.requires_grad = False
+            
+            # Freeze encoder layers (0 to freeze_layers-1)
+            for i in range(freeze_layers):
+                for param in self.model.bert.encoder.layer[i].parameters():
+                    param.requires_grad = False
     
     def forward(self, input_ids, attention_mask):
-        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
-        pooled_output = outputs.last_hidden_state[:, 0, :]  # CLS token
-        
-        # Multi-layer classification head
-        x = self.dropout1(pooled_output)
-        x = self.fc1(x)
-        x = self.relu(x)
-        x = self.dropout2(x)
-        logits = self.classifier(x)
-        
-        return logits
+        # AutoModelForSequenceClassification returns SequenceClassifierOutput
+        outputs = self.model(
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            return_dict=True
+        )
+        return outputs.logits  # Shape: (batch_size, num_classes)
 
 
 def train_transformer_model(train_df: pd.DataFrame,
@@ -878,32 +883,27 @@ def train_transformer_model(train_df: pd.DataFrame,
     class_counts = train_df['label'].value_counts().sort_index()
     total = len(train_df)
     
-    # ===== JAVÍTOTT: BALANCED CLASS WEIGHTS =====
+    # ===== JAVÍTOTT: BALANCED CLASS WEIGHTS (INVERTED!) =====
     class_weights = []
     for label in range(1, NUM_CLASSES + 1):
         count = class_counts.get(label, 1)
-        # Balanced weight: total / (num_classes * count)
-        weight = total / (NUM_CLASSES * count)
+        # INVERTED: Nagyobb osztály → NAGYOBB súly (fordított logika!)
+        weight = count / total  # Label 4 (197/104) = 1.89 → LEGNAGYOBB!
         class_weights.append(weight)
     
     class_weights = np.array(class_weights, dtype=np.float32)
     
-    max_weight = np.mean(class_weights) * 3  # Max 3x az átlag
-    class_weights = np.minimum(class_weights, max_weight)
+    # ===== ÚJ: NORMALIZE WEIGHTS (SUM = NUM_CLASSES) =====
+    class_weights = class_weights / class_weights.sum() * NUM_CLASSES
     
-    logger.info(f"Class weights (balanced & capped): {class_weights}")
+    logger.info(f"Class weights (inverted & normalized): {class_weights}")
     
     class_weights = torch.FloatTensor(class_weights).to(device)
     
-    logger.info(f"Class weights: {class_weights.cpu().numpy()}")
-        
-    # Inicializálás:
-    if config['use_focal_loss']:
-        criterion = FocalLoss(alpha=class_weights, gamma=1.5)  # ← GAMMA: 2.0 → 1.5
-        logger.info("Using Focal Loss (gamma=1.5) for handling class imbalance")
-    else:
-        criterion = nn.CrossEntropyLoss(weight=class_weights)
-        logger.info("Using Cross Entropy Loss with class weights")
+    # ===== FONTOS: CROSS ENTROPY LOSS (NEM FOCAL!) =====
+    # Focal Loss túl agresszív → Label 4-re ragad!
+    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    logger.info("Using Cross Entropy Loss with INVERTED class weights")
         
     # Label smoothing if configured
     label_smoothing = config.get('label_smoothing', 0.0)

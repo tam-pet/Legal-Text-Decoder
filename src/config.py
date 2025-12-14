@@ -41,8 +41,8 @@ BASELINE_CONFIG = {
     'classifier': 'logistic_regression',  # Vagy 'random_forest', 'gradient_boosting'
     'class_weight': 'balanced',
     
-    'tfidf_max_features': 1000,  
-    'tfidf_ngram_range': (1, 2),  # Csak unigram + bigram, trigram túl sok
+    'tfidf_max_features': 1500,  
+    'tfidf_ngram_range': (1, 3),  # Csak unigram + bigram, trigram túl sok
     'tfidf_min_df': 1,  # ← CSÖKKENTSD 2-ről 1-re (ne veszíts ritka szavakat!)
     'tfidf_max_df': 0.9,  # ← CSÖKKENTSD 0.95-ről (agresszívebb stop word szűrés)
     
@@ -68,17 +68,17 @@ TRANSFORMER_CONFIG = {
     "model_name": "SZTAKI-HLT/hubert-base-cc",
     "max_length": 128,
     "batch_size": 4,  # Smaller batch for better gradient updates
-    "learning_rate": 0.001,  # Lower LR for stability
+    "learning_rate": 0.00001,  # Lower LR for stability
     "num_epochs": 20,  # More epochs for small dataset
     "warmup_ratio": 0.1,  # Longer warmup
     "weight_decay": 0.01,
-    "dropout": 0.5,  # Higher dropout to prevent overfitting
+    "dropout": 0.4,  # Higher dropout to prevent overfitting
     "early_stopping_patience": 5,
     "gradient_accumulation_steps": 4,  # Effective batch size = 32
     "freeze_layers": 10,  # Freeze first 10 BERT layers
     "use_augmentation": False,  # Data augmentation DISABLED (not allowed)
     "label_smoothing": 0.0,  # Label smoothing for regularization
-    "use_focal_loss": True,  # Focal loss for imbalanced data
+    "use_focal_loss": False,  # Focal loss for imbalanced data
     "use_augmentation": False,
 }
 
@@ -86,9 +86,10 @@ TRANSFORMER_CONFIG = {
 # Training Settings
 # =============================================================================
 TRAIN_CONFIG = {
-    "validation_split": 0.2,
+    "validation_split": 0.15,
     "test_split": 0.0,  # We have separate test data
     "stratify": True,
+    "k_folds": 5,
     "shuffle": True,
 }
 
