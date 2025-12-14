@@ -1,6 +1,10 @@
 """
 Configuration file for Legal Text Decoder project.
 Contains all hyperparameters, paths, and settings.
+
+Structure:
+- BASELINE: Logistic Regression (simple reference model)
+- ADVANCED: XGBoost, RandomForest, GradientBoosting (to beat baseline)
 """
 
 import os
@@ -19,97 +23,167 @@ LOG_DIR = PROJECT_ROOT / "log"
 # Data URLs
 DATA_URL = "https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQDYwXUJcB_jQYr0bDfNT5RKARYgfKoH97zho3rxZ46KA1I?e=iFp3iz&download=1"
 
-# Training data folder (your Neptun code)
+# Training data folder
 TRAIN_FOLDER = "FA0B9B"
-# Test data folder (consensus annotations)
+# Test data folder
 TEST_FOLDER = "consensus"
 
 
-
-
-
 # =============================================================================
-# Model Hyperparameters
+# General Settings
 # =============================================================================
-
-# General
 RANDOM_SEED = 42
-NUM_CLASSES = 5  # Ratings 1-5
+NUM_CLASSES = 5  # Ratings 1-5 (legal text readability)
 
-# Baseline Model (TF-IDF + Classifier)
+
+# =============================================================================
+# TF-IDF Configuration (shared by all models)
+# =============================================================================
+TFIDF_CONFIG = {
+    'max_features': 1500,
+    'ngram_range': (1, 3),     # Unigram + bigram + trigram
+    'min_df': 1,               # Keep rare words (small dataset)
+    'max_df': 0.9,             # Remove very common words
+    'sublinear_tf': True,      # Apply log scaling
+}
+
+
+# =============================================================================
+# BASELINE MODEL: Logistic Regression
+# =============================================================================
+# Purpose: Simple reference model to establish baseline performance
+# The advanced models should beat this baseline
 BASELINE_CONFIG = {
-    'classifier': 'logistic_regression',  # Vagy 'random_forest', 'gradient_boosting'
+    'name': 'Logistic Regression',
+    'classifier': 'logistic_regression',
+    'class_weight': 'balanced',    # Handle class imbalance
+    'max_iter': 1000,
+    'solver': 'lbfgs',
+    'multi_class': 'multinomial',
+    
+    # TF-IDF settings (use shared config)
+    'tfidf': TFIDF_CONFIG,
+}
+
+
+# =============================================================================
+# ADVANCED MODELS 
+# =============================================================================
+
+# XGBoost - Gradient Boosting with regularization
+XGBOOST_CONFIG = {
+    'name': 'XGBoost',
+    'classifier': 'xgboost',
+    
+    # Tree parameters
+    'n_estimators': 100,
+    'max_depth': 4,
+    'min_child_weight': 3,
+    
+    # Learning parameters
+    'learning_rate': 0.05,
+    'subsample': 0.8,
+    'colsample_bytree': 0.8,
+    
+    # Regularization
+    'gamma': 0.1,
+    'reg_alpha': 0.01,
+    'reg_lambda': 1.0,
+    
+    # Other
+    'objective': 'multi:softmax',
+    'eval_metric': 'mlogloss',
+    
+    # TF-IDF settings
+    'tfidf': TFIDF_CONFIG,
+}
+
+
+# RandomForest - Ensemble of decision trees
+RANDOMFOREST_CONFIG = {
+    'name': 'Random Forest',
+    'classifier': 'random_forest',
+    
+    # Tree parameters
+    'n_estimators': 100,
+    'max_depth': 8,
+    'min_samples_split': 5,
+    'min_samples_leaf': 2,
+    
+    # Other
     'class_weight': 'balanced',
+    'n_jobs': -1,
     
-    'tfidf_max_features': 1500,  
-    'tfidf_ngram_range': (1, 3),  # Csak unigram + bigram, trigram túl sok
-    'tfidf_min_df': 1,  # ← CSÖKKENTSD 2-ről 1-re (ne veszíts ritka szavakat!)
-    'tfidf_max_df': 0.9,  # ← CSÖKKENTSD 0.95-ről (agresszívebb stop word szűrés)
-    
-    'use_augmentation': False,
+    # TF-IDF settings
+    'tfidf': TFIDF_CONFIG,
 }
 
-# Simple MLP Model (Neural Network on TF-IDF features)
-MLP_CONFIG = {
-    "tfidf_max_features": 3000,
-    "tfidf_ngram_range": (1, 3),
-    "hidden_layers": [512, 256, 128],  # 3-layer MLP
-    "dropout": 0.4,
-    "learning_rate": 0.001,
-    "batch_size": 32,
-    "num_epochs": 50,
-    "early_stopping_patience": 10,
-    "use_augmentation": False,
+
+# GradientBoosting - Sklearn's gradient boosting
+GRADIENTBOOSTING_CONFIG = {
+    'name': 'Gradient Boosting',
+    'classifier': 'gradient_boosting',
+    
+    # Tree parameters
+    'n_estimators': 100,
+    'max_depth': 4,
+    'min_samples_split': 5,
+    'min_samples_leaf': 2,
+    
+    # Learning parameters
+    'learning_rate': 0.01,
+    'subsample': 0.8,
+    
+    # TF-IDF settings
+    'tfidf': TFIDF_CONFIG,
 }
 
-# Transformer Model
-TRANSFORMER_CONFIG = {
-    # Hungarian BERT model
-    "model_name": "SZTAKI-HLT/hubert-base-cc",
-    "max_length": 128,
-    "batch_size": 4,  # Smaller batch for better gradient updates
-    "learning_rate": 0.00001,  # Lower LR for stability
-    "num_epochs": 20,  # More epochs for small dataset
-    "warmup_ratio": 0.1,  # Longer warmup
-    "weight_decay": 0.01,
-    "dropout": 0.4,  # Higher dropout to prevent overfitting
-    "early_stopping_patience": 5,
-    "gradient_accumulation_steps": 4,  # Effective batch size = 32
-    "freeze_layers": 10,  # Freeze first 10 BERT layers
-    "use_augmentation": False,  # Data augmentation DISABLED (not allowed)
-    "label_smoothing": 0.0,  # Label smoothing for regularization
-    "use_focal_loss": False,  # Focal loss for imbalanced data
-    "use_augmentation": False,
-}
+
+# =============================================================================
+# List of all models to train
+# =============================================================================
+# Change this to select which models to train
+MODELS_TO_TRAIN = [
+    'baseline',           # Always train baseline first
+    'xgboost',            # Advanced model 1
+    'random_forest',      # Advanced model 2
+    'gradient_boosting',  # Advanced model 3
+]
+
 
 # =============================================================================
 # Training Settings
 # =============================================================================
 TRAIN_CONFIG = {
-    "validation_split": 0.15,
-    "test_split": 0.0,  # We have separate test data
-    "stratify": True,
-    "k_folds": 5,
-    "shuffle": True,
+    'validation_split': 0.15,
+    'test_split': 0.0,           
+    'stratify': True,
+    'k_folds': 5,               
+    'shuffle': True,
 }
+
 
 # =============================================================================
 # Evaluation Settings
 # =============================================================================
 EVAL_CONFIG = {
-    "metrics": ["accuracy", "f1_macro", "f1_weighted", "mae", "confusion_matrix"],
-    "consensus_threshold": 0.5,  # Agreement threshold for consensus labels
+    'metrics': ['accuracy', 'f1_macro', 'f1_weighted', 'mae', 'confusion_matrix'],
+    'consensus_threshold': 0.5,  
 }
+
 
 # =============================================================================
 # Logging Settings
 # =============================================================================
 LOG_CONFIG = {
-    "log_level": "INFO",
-    "log_file": LOG_DIR / "run.log",
-    "console_output": True,
+    'log_level': 'INFO',
+    'log_file': LOG_DIR / 'run.log',
+    'console_output': True,
 }
 
+
+# =============================================================================
 # Create directories if they don't exist
+# =============================================================================
 for dir_path in [DATA_DIR, RAW_DATA_DIR, PROCESSED_DATA_DIR, MODEL_DIR, LOG_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)

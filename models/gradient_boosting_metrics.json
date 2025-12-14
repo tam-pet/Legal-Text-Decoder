@@ -1,0 +1,51 @@
+{
+  "accuracy": 0.1875,
+  "f1_macro": 0.10598290598290598,
+  "f1_weighted": 0.15170940170940173,
+  "precision_macro": 0.09,
+  "recall_macro": 0.13,
+  "mae": 1.125,
+  "cohen_kappa": -0.10052910052910047,
+  "confusion_matrix": [
+    [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      3,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n           1       0.00      0.00      0.00         2\n           2       0.00      0.00      0.00         4\n           3       0.20      0.25      0.22         4\n           4       0.25      0.40      0.31         5\n           5       0.00      0.00      0.00         1\n\n    accuracy                           0.19        16\n   macro avg       0.09      0.13      0.11        16\nweighted avg       0.13      0.19      0.15        16\n",
+  "cv_accuracy": 0.37476190476190474,
+  "cv_accuracy_std": 0.03256251618529287,
+  "cv_f1_macro": 0.2925580497933439,
+  "cv_f1_macro_std": 0.06542363475017822
+}
