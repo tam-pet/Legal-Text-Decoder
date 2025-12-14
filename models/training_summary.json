@@ -1,42 +1,42 @@
 {
   "baseline": {
-    "cv_accuracy": 0.35619047619047617,
-    "cv_accuracy_std": 0.09944973319776468,
-    "cv_f1_macro": 0.32313575313575316,
-    "cv_f1_macro_std": 0.14510689235696805,
+    "cv_accuracy": 0.3076190476190476,
+    "cv_accuracy_std": 0.07073312239096054,
+    "cv_f1_macro": 0.2724531024531025,
+    "cv_f1_macro_std": 0.1360810221805314,
     "val_accuracy": 0.25,
     "val_f1_macro": 0.15272727272727274,
-    "val_mae": 1.0,
-    "val_cohen_kappa": -0.02127659574468077
+    "val_mae": 0.9375,
+    "val_cohen_kappa": -0.005235602094240788
   },
   "xgboost": {
-    "cv_accuracy": 0.37523809523809526,
-    "cv_accuracy_std": 0.09779426783233094,
-    "cv_f1_macro": 0.22086586807249073,
-    "cv_f1_macro_std": 0.062094114948525035,
+    "cv_accuracy": 0.3076190476190476,
+    "cv_accuracy_std": 0.02163393655542961,
+    "cv_f1_macro": 0.09401709401709402,
+    "cv_f1_macro_std": 0.005042010667949622,
     "val_accuracy": 0.3125,
-    "val_f1_macro": 0.15714285714285714,
-    "val_mae": 1.125,
-    "val_cohen_kappa": 0.027624309392265234
+    "val_f1_macro": 0.09523809523809523,
+    "val_mae": 1.1875,
+    "val_cohen_kappa": 0.0
   },
   "random_forest": {
-    "cv_accuracy": 0.2790476190476191,
-    "cv_accuracy_std": 0.12232071891811293,
-    "cv_f1_macro": 0.251004995004995,
-    "cv_f1_macro_std": 0.15220474005880638,
-    "val_accuracy": 0.1875,
-    "val_f1_macro": 0.16153846153846155,
-    "val_mae": 1.0,
-    "val_cohen_kappa": -0.1063829787234043
+    "cv_accuracy": 0.24047619047619045,
+    "cv_accuracy_std": 0.06042179781166439,
+    "cv_f1_macro": 0.19001154401154402,
+    "cv_f1_macro_std": 0.05178234304616243,
+    "val_accuracy": 0.25,
+    "val_f1_macro": 0.23714285714285716,
+    "val_mae": 0.8125,
+    "val_cohen_kappa": -0.005235602094240788
   },
   "gradient_boosting": {
-    "cv_accuracy": 0.3357142857142857,
-    "cv_accuracy_std": 0.04785655057676614,
-    "cv_f1_macro": 0.2318946608946609,
-    "cv_f1_macro_std": 0.04173956631957711,
-    "val_accuracy": 0.3125,
-    "val_f1_macro": 0.18,
-    "val_mae": 0.875,
-    "val_cohen_kappa": 0.05882352941176472
+    "cv_accuracy": 0.30904761904761907,
+    "cv_accuracy_std": 0.09920774602191251,
+    "cv_f1_macro": 0.19663549522373053,
+    "cv_f1_macro_std": 0.09397623190975234,
+    "val_accuracy": 0.125,
+    "val_f1_macro": 0.06666666666666667,
+    "val_mae": 1.0,
+    "val_cohen_kappa": -0.19786096256684482
   }
 }

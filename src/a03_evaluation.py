@@ -580,15 +580,15 @@ def main():
         )
     
     # Find best model
-    best_model = max(all_metrics.items(), key=lambda x: x[1]['f1_macro'])
-    logger.info(f"\nBest model (by F1 Macro): {best_model[0]} ({best_model[1]['f1_macro']:.4f})")
+    best_model = max(all_metrics.items(), key=lambda x: x[1]['accuracy'])
+    logger.info(f"\nBest model (by Accuracy): {best_model[0]} ({best_model[1]['accuracy']:.4f})")
     
     # Check if any advanced model beats baseline
     if 'baseline' in all_metrics:
-        baseline_f1 = all_metrics['baseline']['f1_macro']
+        baseline_f1 = all_metrics['baseline']['accuracy']
         for model_name, metrics in all_metrics.items():
             if model_name != 'baseline':
-                diff = metrics['f1_macro'] - baseline_f1
+                diff = metrics['accuracy'] - baseline_f1
                 status = "[+] BEATS BASELINE" if diff > 0 else "[-] Below baseline"
                 logger.info(f"  {model_name}: {status} (diff: {diff:+.4f})")
     

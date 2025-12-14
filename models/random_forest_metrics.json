@@ -1,11 +1,11 @@
 {
-  "accuracy": 0.1875,
-  "f1_macro": 0.16153846153846155,
-  "f1_weighted": 0.15865384615384615,
-  "precision_macro": 0.15,
-  "recall_macro": 0.18,
-  "mae": 1.0,
-  "cohen_kappa": -0.1063829787234043,
+  "accuracy": 0.25,
+  "f1_macro": 0.23714285714285716,
+  "f1_weighted": 0.24642857142857144,
+  "precision_macro": 0.24,
+  "recall_macro": 0.24,
+  "mae": 0.8125,
+  "cohen_kappa": -0.005235602094240788,
   "confusion_matrix": [
     [
       1,
@@ -16,23 +16,23 @@
     ],
     [
       1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
       0,
+      1,
       1,
       2,
       0
     ],
     [
       0,
-      1,
       0,
-      3,
-      0
-    ],
-    [
-      0,
+      4,
       1,
-      2,
-      2,
       0
     ],
     [
@@ -43,9 +43,9 @@
       0
     ]
   ],
-  "classification_report": "              precision    recall  f1-score   support\n\n           1       0.50      0.50      0.50         2\n           2       0.00      0.00      0.00         4\n           3       0.00      0.00      0.00         4\n           4       0.25      0.40      0.31         5\n           5       0.00      0.00      0.00         1\n\n    accuracy                           0.19        16\n   macro avg       0.15      0.18      0.16        16\nweighted avg       0.14      0.19      0.16        16\n",
-  "cv_accuracy": 0.2790476190476191,
-  "cv_accuracy_std": 0.12232071891811293,
-  "cv_f1_macro": 0.251004995004995,
-  "cv_f1_macro_std": 0.15220474005880638
+  "classification_report": "              precision    recall  f1-score   support\n\n           1       0.50      0.50      0.50         2\n           2       0.33      0.25      0.29         4\n           3       0.17      0.25      0.20         4\n           4       0.20      0.20      0.20         5\n           5       0.00      0.00      0.00         1\n\n    accuracy                           0.25        16\n   macro avg       0.24      0.24      0.24        16\nweighted avg       0.25      0.25      0.25        16\n",
+  "cv_accuracy": 0.24047619047619045,
+  "cv_accuracy_std": 0.06042179781166439,
+  "cv_f1_macro": 0.19001154401154402,
+  "cv_f1_macro_std": 0.05178234304616243
 }

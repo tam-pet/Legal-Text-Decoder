@@ -40,10 +40,10 @@ NUM_CLASSES = 5  # Ratings 1-5 (legal text readability)
 # TF-IDF Configuration (shared by all models)
 # =============================================================================
 TFIDF_CONFIG = {
-    'max_features': 1500,
-    'ngram_range': (1, 3),     # Unigram + bigram + trigram
-    'min_df': 1,               # Keep rare words (small dataset)
-    'max_df': 0.9,             # Remove very common words
+    'max_features': 500,
+    'ngram_range': (1, 2),     # Unigram + bigram 
+    'min_df': 2,               # Keep rare words (small dataset)
+    'max_df': 0.8,             # Remove very common words
     'sublinear_tf': True,      # Apply log scaling
 }
 
@@ -56,10 +56,12 @@ TFIDF_CONFIG = {
 BASELINE_CONFIG = {
     'name': 'Logistic Regression',
     'classifier': 'logistic_regression',
+    'C': 0.1,
     'class_weight': 'balanced',    # Handle class imbalance
     'max_iter': 1000,
     'solver': 'lbfgs',
     'multi_class': 'multinomial',
+    'penalty': 'l2',
     
     # TF-IDF settings (use shared config)
     'tfidf': TFIDF_CONFIG,
@@ -76,19 +78,19 @@ XGBOOST_CONFIG = {
     'classifier': 'xgboost',
     
     # Tree parameters
-    'n_estimators': 100,
-    'max_depth': 4,
-    'min_child_weight': 3,
+    'n_estimators': 50,
+    'max_depth': 2,
+    'min_child_weight': 8,
     
     # Learning parameters
-    'learning_rate': 0.05,
-    'subsample': 0.8,
-    'colsample_bytree': 0.8,
+    'learning_rate': 0.01,
+    'subsample': 0.5,
+    'colsample_bytree': 0.5,
     
     # Regularization
-    'gamma': 0.1,
-    'reg_alpha': 0.01,
-    'reg_lambda': 1.0,
+    'gamma': 0.5,
+    'reg_alpha': 0.1,
+    'reg_lambda': 5.0,
     
     # Other
     'objective': 'multi:softmax',
@@ -105,10 +107,10 @@ RANDOMFOREST_CONFIG = {
     'classifier': 'random_forest',
     
     # Tree parameters
-    'n_estimators': 100,
-    'max_depth': 8,
-    'min_samples_split': 5,
-    'min_samples_leaf': 2,
+    'n_estimators': 50,
+    'max_depth': 3,
+    'min_samples_split': 10,
+    'min_samples_leaf': 5,
     
     # Other
     'class_weight': 'balanced',
@@ -125,14 +127,14 @@ GRADIENTBOOSTING_CONFIG = {
     'classifier': 'gradient_boosting',
     
     # Tree parameters
-    'n_estimators': 100,
-    'max_depth': 4,
-    'min_samples_split': 5,
-    'min_samples_leaf': 2,
+    'n_estimators': 50,
+    'max_depth': 2,
+    'min_samples_split': 10,
+    'min_samples_leaf': 5,
     
     # Learning parameters
-    'learning_rate': 0.01,
-    'subsample': 0.8,
+    'learning_rate': 0.05,
+    'subsample': 0.5,
     
     # TF-IDF settings
     'tfidf': TFIDF_CONFIG,

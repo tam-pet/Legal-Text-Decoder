@@ -1,678 +1,660 @@
-2025-12-14 19:29:23 | INFO     | ============================================================
-2025-12-14 19:29:23 | INFO     | LEGAL TEXT DECODER - MODEL EVALUATION
-2025-12-14 19:29:23 | INFO     | ============================================================
-2025-12-14 19:29:23 | INFO     | 
+2025-12-14 20:07:45 | INFO     | ============================================================
+2025-12-14 20:07:45 | INFO     | LEGAL TEXT DECODER - MODEL EVALUATION
+2025-12-14 20:07:45 | INFO     | ============================================================
+2025-12-14 20:07:45 | INFO     | 
 Loading test data...
-2025-12-14 19:29:23 | INFO     | Loaded 2591 test samples
-2025-12-14 19:29:23 | INFO     | 
+2025-12-14 20:07:45 | INFO     | Loaded 2591 test samples
+2025-12-14 20:07:45 | INFO     | 
 Test label distribution:
-2025-12-14 19:29:23 | INFO     |   Rating 1: 123 (4.7%)
-2025-12-14 19:29:23 | INFO     |   Rating 2: 333 (12.9%)
-2025-12-14 19:29:23 | INFO     |   Rating 3: 591 (22.8%)
-2025-12-14 19:29:23 | INFO     |   Rating 4: 810 (31.3%)
-2025-12-14 19:29:23 | INFO     |   Rating 5: 734 (28.3%)
-2025-12-14 19:29:23 | INFO     | 
+2025-12-14 20:07:45 | INFO     |   Rating 1: 123 (4.7%)
+2025-12-14 20:07:45 | INFO     |   Rating 2: 333 (12.9%)
+2025-12-14 20:07:45 | INFO     |   Rating 3: 591 (22.8%)
+2025-12-14 20:07:45 | INFO     |   Rating 4: 810 (31.3%)
+2025-12-14 20:07:45 | INFO     |   Rating 5: 734 (28.3%)
+2025-12-14 20:07:45 | INFO     | 
 ============================================================
-2025-12-14 19:29:23 | INFO     | LOADING MODELS
-2025-12-14 19:29:23 | INFO     | ============================================================
-2025-12-14 19:29:23 | INFO     | Loading baseline model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\baseline_model.pkl
-2025-12-14 19:29:23 | INFO     | Loading xgboost model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\xgboost_model.pkl
-2025-12-14 19:29:23 | INFO     | Loading random_forest model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\random_forest_model.pkl
-2025-12-14 19:29:23 | INFO     | Loading gradient_boosting model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\gradient_boosting_model.pkl
-2025-12-14 19:29:23 | INFO     | 
+2025-12-14 20:07:45 | INFO     | LOADING MODELS
+2025-12-14 20:07:45 | INFO     | ============================================================
+2025-12-14 20:07:45 | INFO     | Loading baseline model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\baseline_model.pkl
+2025-12-14 20:07:45 | INFO     | Loading xgboost model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\xgboost_model.pkl
+2025-12-14 20:07:46 | INFO     | Loading random_forest model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\random_forest_model.pkl
+2025-12-14 20:07:46 | INFO     | Loading gradient_boosting model from C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\gradient_boosting_model.pkl
+2025-12-14 20:07:46 | INFO     | 
 Loaded 4 models: ['baseline', 'xgboost', 'random_forest', 'gradient_boosting']
-2025-12-14 19:29:23 | INFO     | 
+2025-12-14 20:07:46 | INFO     | 
 
 
-2025-12-14 19:29:23 | INFO     | ============================================================
-2025-12-14 19:29:23 | INFO     | EVALUATING: Logistic Regression
-2025-12-14 19:29:23 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | Logistic Regression - Test Results
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | Accuracy: 0.2420
-2025-12-14 19:29:24 | INFO     | F1 Macro: 0.1858
-2025-12-14 19:29:24 | INFO     | F1 Weighted: 0.1981
-2025-12-14 19:29:24 | INFO     | Precision Macro: 0.2469
-2025-12-14 19:29:24 | INFO     | Recall Macro: 0.2263
-2025-12-14 19:29:24 | INFO     | MAE: 1.1949
-2025-12-14 19:29:24 | INFO     | Cohen's Kappa: 0.0114
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | EVALUATING: Logistic Regression
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | Logistic Regression - Test Results
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | Accuracy: 0.2431
+2025-12-14 20:07:46 | INFO     | F1 Macro: 0.1851
+2025-12-14 20:07:46 | INFO     | F1 Weighted: 0.1973
+2025-12-14 20:07:46 | INFO     | Precision Macro: 0.2366
+2025-12-14 20:07:46 | INFO     | Recall Macro: 0.2276
+2025-12-14 20:07:46 | INFO     | MAE: 1.1972
+2025-12-14 20:07:46 | INFO     | Cohen's Kappa: 0.0104
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
 Confusion Matrix:
-2025-12-14 19:29:24 | INFO     | 
-[[ 15  45   8  55   0]
- [ 21 121  36 155   0]
- [ 12 207  86 283   3]
- [ 21 263 119 398   9]
- [ 17 189 110 411   7]]
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | 
+[[ 19  35   7  62   0]
+ [ 26 108  37 162   0]
+ [ 19 200  82 288   2]
+ [ 29 247 109 415  10]
+ [ 38 163  82 445   6]]
+2025-12-14 20:07:46 | INFO     | 
 Classification Report:
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | 
               precision    recall  f1-score   support
 
-           1       0.17      0.12      0.14       123
-           2       0.15      0.36      0.21       333
-           3       0.24      0.15      0.18       591
-           4       0.31      0.49      0.38       810
-           5       0.37      0.01      0.02       734
+           1       0.15      0.15      0.15       123
+           2       0.14      0.32      0.20       333
+           3       0.26      0.14      0.18       591
+           4       0.30      0.51      0.38       810
+           5       0.33      0.01      0.02       734
 
     accuracy                           0.24      2591
-   macro avg       0.25      0.23      0.19      2591
-weighted avg       0.28      0.24      0.20      2591
+   macro avg       0.24      0.23      0.19      2591
+weighted avg       0.27      0.24      0.20      2591
 
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | PER-SAMPLE ANALYSIS: Logistic Regression
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | PER-SAMPLE ANALYSIS: Logistic Regression
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
 Total samples: 2591
-2025-12-14 19:29:24 | INFO     | Correct predictions: 627 (24.2%)
-2025-12-14 19:29:24 | INFO     | Average error: 1.195
-2025-12-14 19:29:24 | INFO     | Max error: 4
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | Correct predictions: 630 (24.3%)
+2025-12-14 20:07:46 | INFO     | Average error: 1.197
+2025-12-14 20:07:46 | INFO     | Max error: 4
+2025-12-14 20:07:46 | INFO     | 
 Error Distribution:
-2025-12-14 19:29:24 | INFO     |   Error 0: 627 samples (24.2%)
-2025-12-14 19:29:24 | INFO     |   Error 1: 1131 samples (43.7%)
-2025-12-14 19:29:24 | INFO     |   Error 2: 551 samples (21.3%)
-2025-12-14 19:29:24 | INFO     |   Error 3: 265 samples (10.2%)
-2025-12-14 19:29:24 | INFO     |   Error 4: 17 samples (0.7%)
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Error 0: 630 samples (24.3%)
+2025-12-14 20:07:46 | INFO     |   Error 1: 1150 samples (44.4%)
+2025-12-14 20:07:46 | INFO     |   Error 2: 519 samples (20.0%)
+2025-12-14 20:07:46 | INFO     |   Error 3: 254 samples (9.8%)
+2025-12-14 20:07:46 | INFO     |   Error 4: 38 samples (1.5%)
+2025-12-14 20:07:46 | INFO     | 
 Accuracy by True Label:
-2025-12-14 19:29:24 | INFO     |   Label 1: 12.2% (15/123)
-2025-12-14 19:29:24 | INFO     |   Label 2: 36.3% (121/333)
-2025-12-14 19:29:24 | INFO     |   Label 3: 14.6% (86/591)
-2025-12-14 19:29:24 | INFO     |   Label 4: 49.1% (398/810)
-2025-12-14 19:29:24 | INFO     |   Label 5: 1.0% (7/734)
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Label 1: 15.4% (19/123)
+2025-12-14 20:07:46 | INFO     |   Label 2: 32.4% (108/333)
+2025-12-14 20:07:46 | INFO     |   Label 3: 13.9% (82/591)
+2025-12-14 20:07:46 | INFO     |   Label 4: 51.2% (415/810)
+2025-12-14 20:07:46 | INFO     |   Label 5: 0.8% (6/734)
+2025-12-14 20:07:46 | INFO     | 
 Most Common Confusions (True -> Predicted):
-2025-12-14 19:29:24 | INFO     |   5 -> 4: 411 times
-2025-12-14 19:29:24 | INFO     |   3 -> 4: 283 times
-2025-12-14 19:29:24 | INFO     |   4 -> 2: 263 times
-2025-12-14 19:29:24 | INFO     |   3 -> 2: 207 times
-2025-12-14 19:29:24 | INFO     |   5 -> 2: 189 times
-2025-12-14 19:29:24 | INFO     |   2 -> 4: 155 times
-2025-12-14 19:29:24 | INFO     |   4 -> 3: 119 times
-2025-12-14 19:29:24 | INFO     |   5 -> 3: 110 times
-2025-12-14 19:29:24 | INFO     |   1 -> 4: 55 times
-2025-12-14 19:29:24 | INFO     |   1 -> 2: 45 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   5 -> 4: 445 times
+2025-12-14 20:07:46 | INFO     |   3 -> 4: 288 times
+2025-12-14 20:07:46 | INFO     |   4 -> 2: 247 times
+2025-12-14 20:07:46 | INFO     |   3 -> 2: 200 times
+2025-12-14 20:07:46 | INFO     |   5 -> 2: 163 times
+2025-12-14 20:07:46 | INFO     |   2 -> 4: 162 times
+2025-12-14 20:07:46 | INFO     |   4 -> 3: 109 times
+2025-12-14 20:07:46 | INFO     |   5 -> 3: 82 times
+2025-12-14 20:07:46 | INFO     |   1 -> 4: 62 times
+2025-12-14 20:07:46 | INFO     |   5 -> 1: 38 times
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | PER-LABEL METRICS: Logistic Regression
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
-2025-12-14 19:29:24 | INFO     | Label    Precision    Recall       F1           Support   
-2025-12-14 19:29:24 | INFO     | ------------------------------------------------------------
-2025-12-14 19:29:24 | INFO     | 1        0.174        0.122        0.144        123       
-2025-12-14 19:29:24 | INFO     | 2        0.147        0.363        0.209        333       
-2025-12-14 19:29:24 | INFO     | 3        0.240        0.146        0.181        591       
-2025-12-14 19:29:24 | INFO     | 4        0.306        0.491        0.377        810       
-2025-12-14 19:29:24 | INFO     | 5        0.368        0.010        0.019        734       
-2025-12-14 19:29:24 | INFO     | 
-2025-12-14 19:29:24 | INFO     | Macro Avg 0.247        0.226        0.186       
-2025-12-14 19:29:24 | INFO     | Weighted 0.282        0.242        0.198       
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | PER-LABEL METRICS: Logistic Regression
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
+2025-12-14 20:07:46 | INFO     | Label    Precision    Recall       F1           Support   
+2025-12-14 20:07:46 | INFO     | ------------------------------------------------------------
+2025-12-14 20:07:46 | INFO     | 1        0.145        0.154        0.150        123       
+2025-12-14 20:07:46 | INFO     | 2        0.143        0.324        0.199        333       
+2025-12-14 20:07:46 | INFO     | 3        0.259        0.139        0.181        591       
+2025-12-14 20:07:46 | INFO     | 4        0.302        0.512        0.380        810       
+2025-12-14 20:07:46 | INFO     | 5        0.333        0.008        0.016        734       
+2025-12-14 20:07:46 | INFO     | 
+2025-12-14 20:07:46 | INFO     | Macro Avg 0.237        0.228        0.185       
+2025-12-14 20:07:46 | INFO     | Weighted 0.273        0.243        0.197       
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | ERROR ANALYSIS BY TRUE LABEL
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | ERROR ANALYSIS BY TRUE LABEL
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
 True Label = 1 (123 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 15 (12.2%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.84
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 55 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 45 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 8 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 19 (15.4%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 1.91
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 62 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 2: 35 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 3: 7 times
+2025-12-14 20:07:46 | INFO     | 
 True Label = 2 (333 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 121 (36.3%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.10
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 155 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 36 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 1: 21 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 108 (32.4%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 1.16
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 162 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 3: 37 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 1: 26 times
+2025-12-14 20:07:46 | INFO     | 
 True Label = 3 (591 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 86 (14.6%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 0.88
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 283 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 207 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 1: 12 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 82 (13.9%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 0.90
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 288 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 2: 200 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 1: 19 times
+2025-12-14 20:07:46 | INFO     | 
 True Label = 4 (810 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 398 (49.1%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 0.89
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 263 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 119 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 1: 21 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 415 (51.2%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 0.86
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 2: 247 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 3: 109 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 1: 29 times
+2025-12-14 20:07:46 | INFO     | 
 True Label = 5 (734 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 7 (1.0%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.72
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 411 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 189 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 110 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 6 (0.8%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 1.70
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 445 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 2: 163 times
+2025-12-14 20:07:46 | INFO     |     Predicted as 3: 82 times
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 101. True=5, Pred=1, Error=4, Conf: 0.263 | Jelen Fogyasztói ÁSZF csak a fogyasztónak minősülő vásárlókra vonatkozik. Fogyas...
-2025-12-14 19:29:24 | INFO     | 154. True=5, Pred=1, Error=4, Conf: 0.235 | Ha a Vásárló fogyasztónak minősül, megilleti az elállás joga a távollevők között...
-2025-12-14 19:29:24 | INFO     | 293. True=5, Pred=1, Error=4, Conf: 0.267 | II. Általános rendelkezések
-2025-12-14 19:29:24 | INFO     | 338. True=5, Pred=1, Error=4, Conf: 0.267 | 1. Általános rendelkezések, ÁSZF hatálya
-2025-12-14 19:29:24 | INFO     | 453. True=5, Pred=1, Error=4, Conf: 0.247 | Általános Szerződési Feltételek Törzsrész
-2025-12-14 19:29:24 | INFO     | 461. True=5, Pred=1, Error=4, Conf: 0.247 | 1.4. Az általános szerződési feltételek alkalmazása
-2025-12-14 19:29:24 | INFO     | 463. True=5, Pred=1, Error=4, Conf: 0.274 | Az ÁSZF két részből áll: Törzsrész: az egyes Előfizetői szolgáltatásokra vonatko...
-2025-12-14 19:29:24 | INFO     | 502. True=5, Pred=1, Error=4, Conf: 0.271 | Igénylő: Előfizetői szerződés megkötésére vonatkozó Igény bejelentője.
-2025-12-14 19:29:24 | INFO     | 541. True=5, Pred=1, Error=4, Conf: 0.253 | p) Az előfizetői névjegyzékre vonatkozó nyilatkozat megadásának, módosításának, ...
-2025-12-14 19:29:24 | INFO     | 544. True=5, Pred=1, Error=4, Conf: 0.392 | 1.8. A Korm. rendelet szerinti előzetes tájékoztatás
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 101. True=5, Pred=1, Error=4, Conf: 0.256 | Jelen Fogyasztói ÁSZF csak a fogyasztónak minősülő vásárlókra vonatkozik. Fogyas...
+2025-12-14 20:07:46 | INFO     | 154. True=5, Pred=1, Error=4, Conf: 0.283 | Ha a Vásárló fogyasztónak minősül, megilleti az elállás joga a távollevők között...
+2025-12-14 20:07:46 | INFO     | 293. True=5, Pred=1, Error=4, Conf: 0.298 | II. Általános rendelkezések
+2025-12-14 20:07:46 | INFO     | 338. True=5, Pred=1, Error=4, Conf: 0.298 | 1. Általános rendelkezések, ÁSZF hatálya
+2025-12-14 20:07:46 | INFO     | 453. True=5, Pred=1, Error=4, Conf: 0.271 | Általános Szerződési Feltételek Törzsrész
+2025-12-14 20:07:46 | INFO     | 461. True=5, Pred=1, Error=4, Conf: 0.271 | 1.4. Az általános szerződési feltételek alkalmazása
+2025-12-14 20:07:46 | INFO     | 463. True=5, Pred=1, Error=4, Conf: 0.299 | Az ÁSZF két részből áll: Törzsrész: az egyes Előfizetői szolgáltatásokra vonatko...
+2025-12-14 20:07:46 | INFO     | 483. True=5, Pred=1, Error=4, Conf: 0.226 | ÁSZF: a Szolgáltató jelen általános szerződési feltételei elektronikus hírközlés...
+2025-12-14 20:07:46 | INFO     | 502. True=5, Pred=1, Error=4, Conf: 0.306 | Igénylő: Előfizetői szerződés megkötésére vonatkozó Igény bejelentője.
+2025-12-14 20:07:46 | INFO     | 541. True=5, Pred=1, Error=4, Conf: 0.283 | p) Az előfizetői névjegyzékre vonatkozó nyilatkozat megadásának, módosításának, ...
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 1093. True=3, Pred=1, Conf=0.540 | Törzsrész: az egyes Előfizetői szolgáltatásokra vonatkozó általános jellegű rend...
-2025-12-14 19:29:24 | INFO     | 544. True=5, Pred=1, Conf=0.392 | 1.8. A Korm. rendelet szerinti előzetes tájékoztatás
-2025-12-14 19:29:24 | INFO     | 57. True=5, Pred=4, Conf=0.357 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
-2025-12-14 19:29:24 | INFO     | 861. True=5, Pred=4, Conf=0.357 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
-2025-12-14 19:29:24 | INFO     | 1231. True=5, Pred=4, Conf=0.357 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 1093. True=3, Pred=1, Conf=0.512 | Törzsrész: az egyes Előfizetői szolgáltatásokra vonatkozó általános jellegű rend...
+2025-12-14 20:07:46 | INFO     | 544. True=5, Pred=1, Conf=0.424 | 1.8. A Korm. rendelet szerinti előzetes tájékoztatás
+2025-12-14 20:07:46 | INFO     | 57. True=5, Pred=4, Conf=0.385 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
+2025-12-14 20:07:46 | INFO     | 861. True=5, Pred=4, Conf=0.385 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
+2025-12-14 20:07:46 | INFO     | 1231. True=5, Pred=4, Conf=0.385 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
+2025-12-14 20:07:46 | INFO     | 
 
 
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | EVALUATING: XGBoost
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | XGBoost - Test Results
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | Accuracy: 0.3088
-2025-12-14 19:29:24 | INFO     | F1 Macro: 0.1109
-2025-12-14 19:29:24 | INFO     | F1 Weighted: 0.1589
-2025-12-14 19:29:24 | INFO     | Precision Macro: 0.1276
-2025-12-14 19:29:24 | INFO     | Recall Macro: 0.2030
-2025-12-14 19:29:24 | INFO     | MAE: 0.9078
-2025-12-14 19:29:24 | INFO     | Cohen's Kappa: 0.0020
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | EVALUATING: XGBoost
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | XGBoost - Test Results
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | Accuracy: 0.3126
+2025-12-14 20:07:46 | INFO     | F1 Macro: 0.0953
+2025-12-14 20:07:46 | INFO     | F1 Weighted: 0.1489
+2025-12-14 20:07:46 | INFO     | Precision Macro: 0.0625
+2025-12-14 20:07:46 | INFO     | Recall Macro: 0.2000
+2025-12-14 20:07:46 | INFO     | MAE: 0.9108
+2025-12-14 20:07:46 | INFO     | Cohen's Kappa: 0.0000
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
 Confusion Matrix:
-2025-12-14 19:29:24 | INFO     | 
-[[  0   8   7 108   0]
- [  0  15   6 312   0]
- [  0  18   2 571   0]
- [  0  22   5 783   0]
- [  0   1   2 731   0]]
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | 
+[[  0   0   0 123   0]
+ [  0   0   0 333   0]
+ [  0   0   0 591   0]
+ [  0   0   0 810   0]
+ [  0   0   0 734   0]]
+2025-12-14 20:07:46 | INFO     | 
 Classification Report:
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | 
               precision    recall  f1-score   support
 
            1       0.00      0.00      0.00       123
-           2       0.23      0.05      0.08       333
-           3       0.09      0.00      0.01       591
-           4       0.31      0.97      0.47       810
+           2       0.00      0.00      0.00       333
+           3       0.00      0.00      0.00       591
+           4       0.31      1.00      0.48       810
            5       0.00      0.00      0.00       734
 
     accuracy                           0.31      2591
-   macro avg       0.13      0.20      0.11      2591
-weighted avg       0.15      0.31      0.16      2591
+   macro avg       0.06      0.20      0.10      2591
+weighted avg       0.10      0.31      0.15      2591
 
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | PER-SAMPLE ANALYSIS: XGBoost
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | PER-SAMPLE ANALYSIS: XGBoost
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
 Total samples: 2591
-2025-12-14 19:29:24 | INFO     | Correct predictions: 800 (30.9%)
-2025-12-14 19:29:24 | INFO     | Average error: 0.908
-2025-12-14 19:29:24 | INFO     | Max error: 3
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | Correct predictions: 810 (31.3%)
+2025-12-14 20:07:46 | INFO     | Average error: 0.911
+2025-12-14 20:07:46 | INFO     | Max error: 3
+2025-12-14 20:07:46 | INFO     | 
 Error Distribution:
-2025-12-14 19:29:24 | INFO     |   Error 0: 800 samples (30.9%)
-2025-12-14 19:29:24 | INFO     |   Error 1: 1339 samples (51.7%)
-2025-12-14 19:29:24 | INFO     |   Error 2: 343 samples (13.2%)
-2025-12-14 19:29:24 | INFO     |   Error 3: 109 samples (4.2%)
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Error 0: 810 samples (31.3%)
+2025-12-14 20:07:46 | INFO     |   Error 1: 1325 samples (51.1%)
+2025-12-14 20:07:46 | INFO     |   Error 2: 333 samples (12.9%)
+2025-12-14 20:07:46 | INFO     |   Error 3: 123 samples (4.7%)
+2025-12-14 20:07:46 | INFO     | 
 Accuracy by True Label:
-2025-12-14 19:29:24 | INFO     |   Label 1: 0.0% (0/123)
-2025-12-14 19:29:24 | INFO     |   Label 2: 4.5% (15/333)
-2025-12-14 19:29:24 | INFO     |   Label 3: 0.3% (2/591)
-2025-12-14 19:29:24 | INFO     |   Label 4: 96.7% (783/810)
-2025-12-14 19:29:24 | INFO     |   Label 5: 0.0% (0/734)
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Label 1: 0.0% (0/123)
+2025-12-14 20:07:46 | INFO     |   Label 2: 0.0% (0/333)
+2025-12-14 20:07:46 | INFO     |   Label 3: 0.0% (0/591)
+2025-12-14 20:07:46 | INFO     |   Label 4: 100.0% (810/810)
+2025-12-14 20:07:46 | INFO     |   Label 5: 0.0% (0/734)
+2025-12-14 20:07:46 | INFO     | 
 Most Common Confusions (True -> Predicted):
-2025-12-14 19:29:24 | INFO     |   5 -> 4: 731 times
-2025-12-14 19:29:24 | INFO     |   3 -> 4: 571 times
-2025-12-14 19:29:24 | INFO     |   2 -> 4: 312 times
-2025-12-14 19:29:24 | INFO     |   1 -> 4: 108 times
-2025-12-14 19:29:24 | INFO     |   4 -> 2: 22 times
-2025-12-14 19:29:24 | INFO     |   3 -> 2: 18 times
-2025-12-14 19:29:24 | INFO     |   1 -> 2: 8 times
-2025-12-14 19:29:24 | INFO     |   1 -> 3: 7 times
-2025-12-14 19:29:24 | INFO     |   2 -> 3: 6 times
-2025-12-14 19:29:24 | INFO     |   4 -> 3: 5 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   5 -> 4: 734 times
+2025-12-14 20:07:46 | INFO     |   3 -> 4: 591 times
+2025-12-14 20:07:46 | INFO     |   2 -> 4: 333 times
+2025-12-14 20:07:46 | INFO     |   1 -> 4: 123 times
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | PER-LABEL METRICS: XGBoost
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
-2025-12-14 19:29:24 | INFO     | Label    Precision    Recall       F1           Support   
-2025-12-14 19:29:24 | INFO     | ------------------------------------------------------------
-2025-12-14 19:29:24 | INFO     | 1        0.000        0.000        0.000        123       
-2025-12-14 19:29:24 | INFO     | 2        0.234        0.045        0.076        333       
-2025-12-14 19:29:24 | INFO     | 3        0.091        0.003        0.007        591       
-2025-12-14 19:29:24 | INFO     | 4        0.313        0.967        0.472        810       
-2025-12-14 19:29:24 | INFO     | 5        0.000        0.000        0.000        734       
-2025-12-14 19:29:24 | INFO     | 
-2025-12-14 19:29:24 | INFO     | Macro Avg 0.128        0.203        0.111       
-2025-12-14 19:29:24 | INFO     | Weighted 0.149        0.309        0.159       
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | PER-LABEL METRICS: XGBoost
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
+2025-12-14 20:07:46 | INFO     | Label    Precision    Recall       F1           Support   
+2025-12-14 20:07:46 | INFO     | ------------------------------------------------------------
+2025-12-14 20:07:46 | INFO     | 1        0.000        0.000        0.000        123       
+2025-12-14 20:07:46 | INFO     | 2        0.000        0.000        0.000        333       
+2025-12-14 20:07:46 | INFO     | 3        0.000        0.000        0.000        591       
+2025-12-14 20:07:46 | INFO     | 4        0.313        1.000        0.476        810       
+2025-12-14 20:07:46 | INFO     | 5        0.000        0.000        0.000        734       
+2025-12-14 20:07:46 | INFO     | 
+2025-12-14 20:07:46 | INFO     | Macro Avg 0.063        0.200        0.095       
+2025-12-14 20:07:46 | INFO     | Weighted 0.098        0.313        0.149       
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | ERROR ANALYSIS BY TRUE LABEL
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | ERROR ANALYSIS BY TRUE LABEL
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 
 True Label = 1 (123 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 0 (0.0%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 2.81
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 108 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 8 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 7 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 0 (0.0%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 3.00
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 123 times
+2025-12-14 20:07:46 | INFO     | 
 True Label = 2 (333 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 15 (4.5%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.89
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 312 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 6 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 0 (0.0%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 2.00
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 333 times
+2025-12-14 20:07:46 | INFO     | 
 True Label = 3 (591 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 2 (0.3%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.00
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 571 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 18 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 0 (0.0%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 1.00
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 591 times
+2025-12-14 20:07:46 | INFO     | 
 True Label = 4 (810 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 783 (96.7%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 0.06
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 22 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 5 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 810 (100.0%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 0.00
+2025-12-14 20:07:46 | INFO     | 
 True Label = 5 (734 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 0 (0.0%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.01
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 731 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 2 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 1 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     |   Correct: 0 (0.0%)
+2025-12-14 20:07:46 | INFO     |   Avg Error: 1.00
+2025-12-14 20:07:46 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:46 | INFO     |     Predicted as 4: 734 times
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 14. True=1, Pred=4, Error=3, Conf: 0.619 | 8. Az OTP Bank Nyrt. nem Magyarország területén, illetve nem Magyarország joghat...
-2025-12-14 19:29:24 | INFO     | 67. True=1, Pred=4, Error=3, Conf: 0.477 | 8. Az OTP Bank Nyrt. a nem Magyarország területén, és nem Magyarország joghatósá...
-2025-12-14 19:29:24 | INFO     | 68. True=1, Pred=4, Error=3, Conf: 0.499 | 13. A pénzügyi és egyéb szolgáltatók azonosítási feladatához kapcsolódó adatszol...
-2025-12-14 19:29:24 | INFO     | 97. True=1, Pred=4, Error=3, Conf: 0.425 | 12. A XII. 10. a) és c) pontjától eltérően az OBA által nyújtott biztosítás kite...
-2025-12-14 19:29:24 | INFO     | 313. True=1, Pred=4, Error=3, Conf: 0.390 | 1.3.7. A emag.hu weboldalt a magyar székhelyű eMAG Magyarország Kft. gazdasági t...
-2025-12-14 19:29:24 | INFO     | 314. True=1, Pred=4, Error=3, Conf: 0.439 | 1.3.8. Az Eladó  a Vásárló egyidejű értesítése mellett jogkövetkezmények nélkül ...
-2025-12-14 19:29:24 | INFO     | 317. True=1, Pred=4, Error=3, Conf: 0.616 | 1.3.10. A megrendelés elektronikus úton megkötött szerződésnek minősül, amelyre ...
-2025-12-14 19:29:24 | INFO     | 319. True=1, Pred=4, Error=3, Conf: 0.422 | 1.3.12. A Weboldalon megrendelést leadó ÜgyfélVásárló tudomásul veszi, hogy a We...
-2025-12-14 19:29:24 | INFO     | 322. True=1, Pred=4, Error=3, Conf: 0.498 | 5.2. A vásárlónak jogában áll eldönteni, hogy a megrendelését, az elérhető fizet...
-2025-12-14 19:29:24 | INFO     | 330. True=1, Pred=4, Error=3, Conf: 0.347 | 5.9.1.1. Bármikor aktiválható a Payment by 1 click (Fizetés 1 kattintással) fize...
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 14. True=1, Pred=4, Error=3, Conf: 0.241 | 8. Az OTP Bank Nyrt. nem Magyarország területén, illetve nem Magyarország joghat...
+2025-12-14 20:07:46 | INFO     | 67. True=1, Pred=4, Error=3, Conf: 0.238 | 8. Az OTP Bank Nyrt. a nem Magyarország területén, és nem Magyarország joghatósá...
+2025-12-14 20:07:46 | INFO     | 68. True=1, Pred=4, Error=3, Conf: 0.240 | 13. A pénzügyi és egyéb szolgáltatók azonosítási feladatához kapcsolódó adatszol...
+2025-12-14 20:07:46 | INFO     | 97. True=1, Pred=4, Error=3, Conf: 0.238 | 12. A XII. 10. a) és c) pontjától eltérően az OBA által nyújtott biztosítás kite...
+2025-12-14 20:07:46 | INFO     | 313. True=1, Pred=4, Error=3, Conf: 0.239 | 1.3.7. A emag.hu weboldalt a magyar székhelyű eMAG Magyarország Kft. gazdasági t...
+2025-12-14 20:07:46 | INFO     | 314. True=1, Pred=4, Error=3, Conf: 0.237 | 1.3.8. Az Eladó  a Vásárló egyidejű értesítése mellett jogkövetkezmények nélkül ...
+2025-12-14 20:07:46 | INFO     | 317. True=1, Pred=4, Error=3, Conf: 0.241 | 1.3.10. A megrendelés elektronikus úton megkötött szerződésnek minősül, amelyre ...
+2025-12-14 20:07:46 | INFO     | 319. True=1, Pred=4, Error=3, Conf: 0.240 | 1.3.12. A Weboldalon megrendelést leadó ÜgyfélVásárló tudomásul veszi, hogy a We...
+2025-12-14 20:07:46 | INFO     | 322. True=1, Pred=4, Error=3, Conf: 0.238 | 5.2. A vásárlónak jogában áll eldönteni, hogy a megrendelését, az elérhető fizet...
+2025-12-14 20:07:46 | INFO     | 330. True=1, Pred=4, Error=3, Conf: 0.238 | 5.9.1.1. Bármikor aktiválható a Payment by 1 click (Fizetés 1 kattintással) fize...
+2025-12-14 20:07:46 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 112. True=2, Pred=4, Conf=0.735 | Felek között létrejött szerződés nem minősül írásbeli szerződésnek, azt az Alza ...
-2025-12-14 19:29:24 | INFO     | 651. True=3, Pred=4, Conf=0.712 | 3.14 Az Ügyfél köteles az általa adott megbízások szükséges fedezetének a teljes...
-2025-12-14 19:29:24 | INFO     | 865. True=3, Pred=4, Conf=0.712 | 3.14 Az Ügyfél köteles az általa adott megbízások szükséges fedezetének a teljes...
-2025-12-14 19:29:24 | INFO     | 997. True=1, Pred=4, Conf=0.712 | 3.14 Az Ügyfél köteles az általa adott megbízások szükséges fedezetének a teljes...
-2025-12-14 19:29:24 | INFO     | 1235. True=3, Pred=4, Conf=0.712 | 3.14 Az Ügyfél köteles az általa adott megbízások szükséges fedezetének a teljes...
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | 0. True=3, Pred=4, Conf=0.241 | 2. Ügyfélnek tekintendő az a természetes személy, jogi személy vagy jogi személy...
+2025-12-14 20:07:46 | INFO     | 14. True=1, Pred=4, Conf=0.241 | 8. Az OTP Bank Nyrt. nem Magyarország területén, illetve nem Magyarország joghat...
+2025-12-14 20:07:46 | INFO     | 60. True=2, Pred=4, Conf=0.241 | 2. Ügyfélnek tekintendő az a természetes személy, jogi személy vagy jogi személy...
+2025-12-14 20:07:46 | INFO     | 71. True=5, Pred=4, Conf=0.241 | 3. Az OTP Bank Nyrt. bármilyen jog vagy tény fennállását igazoló okirat esetében...
+2025-12-14 20:07:46 | INFO     | 74. True=2, Pred=4, Conf=0.241 | 8. Az OTP Bank Nyrt. nem Magyarország területén, illetve nem Magyarország joghat...
+2025-12-14 20:07:46 | INFO     | 
 
 
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | EVALUATING: Random Forest
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | Random Forest - Test Results
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | Accuracy: 0.2771
-2025-12-14 19:29:24 | INFO     | F1 Macro: 0.1668
-2025-12-14 19:29:24 | INFO     | F1 Weighted: 0.1933
-2025-12-14 19:29:24 | INFO     | Precision Macro: 0.2076
-2025-12-14 19:29:24 | INFO     | Recall Macro: 0.2247
-2025-12-14 19:29:24 | INFO     | MAE: 1.0810
-2025-12-14 19:29:24 | INFO     | Cohen's Kappa: 0.0115
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:46 | INFO     | EVALUATING: Random Forest
+2025-12-14 20:07:46 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | Random Forest - Test Results
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | Accuracy: 0.2706
+2025-12-14 20:07:47 | INFO     | F1 Macro: 0.1301
+2025-12-14 20:07:47 | INFO     | F1 Weighted: 0.1663
+2025-12-14 20:07:47 | INFO     | Precision Macro: 0.1815
+2025-12-14 20:07:47 | INFO     | Recall Macro: 0.2125
+2025-12-14 20:07:47 | INFO     | MAE: 1.1146
+2025-12-14 20:07:47 | INFO     | Cohen's Kappa: 0.0035
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
 Confusion Matrix:
-2025-12-14 19:29:24 | INFO     | 
-[[ 21  12   0  80  10]
- [ 61  47   7 189  29]
- [ 65  61  14 397  54]
- [ 66  59  18 613  54]
- [ 50   7  17 637  23]]
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | 
+[[ 26   6   2  87   2]
+ [ 79   5  20 214  15]
+ [103   6  18 438  26]
+ [121   5  21 647  16]
+ [ 59   2  15 653   5]]
+2025-12-14 20:07:47 | INFO     | 
 Classification Report:
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | 
               precision    recall  f1-score   support
 
-           1       0.08      0.17      0.11       123
-           2       0.25      0.14      0.18       333
-           3       0.25      0.02      0.04       591
-           4       0.32      0.76      0.45       810
-           5       0.14      0.03      0.05       734
+           1       0.07      0.21      0.10       123
+           2       0.21      0.02      0.03       333
+           3       0.24      0.03      0.05       591
+           4       0.32      0.80      0.45       810
+           5       0.08      0.01      0.01       734
 
-    accuracy                           0.28      2591
-   macro avg       0.21      0.22      0.17      2591
-weighted avg       0.23      0.28      0.19      2591
+    accuracy                           0.27      2591
+   macro avg       0.18      0.21      0.13      2591
+weighted avg       0.21      0.27      0.17      2591
 
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | PER-SAMPLE ANALYSIS: Random Forest
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | PER-SAMPLE ANALYSIS: Random Forest
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
 Total samples: 2591
-2025-12-14 19:29:24 | INFO     | Correct predictions: 718 (27.7%)
-2025-12-14 19:29:24 | INFO     | Average error: 1.081
-2025-12-14 19:29:24 | INFO     | Max error: 4
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | Correct predictions: 701 (27.1%)
+2025-12-14 20:07:47 | INFO     | Average error: 1.115
+2025-12-14 20:07:47 | INFO     | Max error: 4
+2025-12-14 20:07:47 | INFO     | 
 Error Distribution:
-2025-12-14 19:29:24 | INFO     |   Error 0: 718 samples (27.7%)
-2025-12-14 19:29:24 | INFO     |   Error 1: 1247 samples (48.1%)
-2025-12-14 19:29:24 | INFO     |   Error 2: 384 samples (14.8%)
-2025-12-14 19:29:24 | INFO     |   Error 3: 182 samples (7.0%)
-2025-12-14 19:29:24 | INFO     |   Error 4: 60 samples (2.3%)
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Error 0: 701 samples (27.1%)
+2025-12-14 20:07:47 | INFO     |   Error 1: 1239 samples (47.8%)
+2025-12-14 20:07:47 | INFO     |   Error 2: 365 samples (14.1%)
+2025-12-14 20:07:47 | INFO     |   Error 3: 225 samples (8.7%)
+2025-12-14 20:07:47 | INFO     |   Error 4: 61 samples (2.4%)
+2025-12-14 20:07:47 | INFO     | 
 Accuracy by True Label:
-2025-12-14 19:29:24 | INFO     |   Label 1: 17.1% (21/123)
-2025-12-14 19:29:24 | INFO     |   Label 2: 14.1% (47/333)
-2025-12-14 19:29:24 | INFO     |   Label 3: 2.4% (14/591)
-2025-12-14 19:29:24 | INFO     |   Label 4: 75.7% (613/810)
-2025-12-14 19:29:24 | INFO     |   Label 5: 3.1% (23/734)
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Label 1: 21.1% (26/123)
+2025-12-14 20:07:47 | INFO     |   Label 2: 1.5% (5/333)
+2025-12-14 20:07:47 | INFO     |   Label 3: 3.0% (18/591)
+2025-12-14 20:07:47 | INFO     |   Label 4: 79.9% (647/810)
+2025-12-14 20:07:47 | INFO     |   Label 5: 0.7% (5/734)
+2025-12-14 20:07:47 | INFO     | 
 Most Common Confusions (True -> Predicted):
-2025-12-14 19:29:24 | INFO     |   5 -> 4: 637 times
-2025-12-14 19:29:24 | INFO     |   3 -> 4: 397 times
-2025-12-14 19:29:24 | INFO     |   2 -> 4: 189 times
-2025-12-14 19:29:24 | INFO     |   1 -> 4: 80 times
-2025-12-14 19:29:24 | INFO     |   4 -> 1: 66 times
-2025-12-14 19:29:24 | INFO     |   3 -> 1: 65 times
-2025-12-14 19:29:24 | INFO     |   2 -> 1: 61 times
-2025-12-14 19:29:24 | INFO     |   3 -> 2: 61 times
-2025-12-14 19:29:24 | INFO     |   4 -> 2: 59 times
-2025-12-14 19:29:24 | INFO     |   3 -> 5: 54 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   5 -> 4: 653 times
+2025-12-14 20:07:47 | INFO     |   3 -> 4: 438 times
+2025-12-14 20:07:47 | INFO     |   2 -> 4: 214 times
+2025-12-14 20:07:47 | INFO     |   4 -> 1: 121 times
+2025-12-14 20:07:47 | INFO     |   3 -> 1: 103 times
+2025-12-14 20:07:47 | INFO     |   1 -> 4: 87 times
+2025-12-14 20:07:47 | INFO     |   2 -> 1: 79 times
+2025-12-14 20:07:47 | INFO     |   5 -> 1: 59 times
+2025-12-14 20:07:47 | INFO     |   3 -> 5: 26 times
+2025-12-14 20:07:47 | INFO     |   4 -> 3: 21 times
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | PER-LABEL METRICS: Random Forest
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
-2025-12-14 19:29:24 | INFO     | Label    Precision    Recall       F1           Support   
-2025-12-14 19:29:24 | INFO     | ------------------------------------------------------------
-2025-12-14 19:29:24 | INFO     | 1        0.080        0.171        0.109        123       
-2025-12-14 19:29:24 | INFO     | 2        0.253        0.141        0.181        333       
-2025-12-14 19:29:24 | INFO     | 3        0.250        0.024        0.043        591       
-2025-12-14 19:29:24 | INFO     | 4        0.320        0.757        0.450        810       
-2025-12-14 19:29:24 | INFO     | 5        0.135        0.031        0.051        734       
-2025-12-14 19:29:24 | INFO     | 
-2025-12-14 19:29:24 | INFO     | Macro Avg 0.208        0.225        0.167       
-2025-12-14 19:29:24 | INFO     | Weighted 0.232        0.277        0.193       
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | PER-LABEL METRICS: Random Forest
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
+2025-12-14 20:07:47 | INFO     | Label    Precision    Recall       F1           Support   
+2025-12-14 20:07:47 | INFO     | ------------------------------------------------------------
+2025-12-14 20:07:47 | INFO     | 1        0.067        0.211        0.102        123       
+2025-12-14 20:07:47 | INFO     | 2        0.208        0.015        0.028        333       
+2025-12-14 20:07:47 | INFO     | 3        0.237        0.030        0.054        591       
+2025-12-14 20:07:47 | INFO     | 4        0.317        0.799        0.454        810       
+2025-12-14 20:07:47 | INFO     | 5        0.078        0.007        0.013        734       
+2025-12-14 20:07:47 | INFO     | 
+2025-12-14 20:07:47 | INFO     | Macro Avg 0.182        0.212        0.130       
+2025-12-14 20:07:47 | INFO     | Weighted 0.205        0.271        0.166       
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | ERROR ANALYSIS BY TRUE LABEL
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | ERROR ANALYSIS BY TRUE LABEL
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
 True Label = 1 (123 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 21 (17.1%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 2.37
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 80 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 12 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 5: 10 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 26 (21.1%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 2.27
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 87 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 2: 6 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 2 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 2 (333 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 47 (14.1%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.60
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 189 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 1: 61 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 5: 29 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 5 (1.5%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 1.72
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 214 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 1: 79 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 20 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 3 (591 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 14 (2.4%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.18
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 397 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 1: 65 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 61 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 18 (3.0%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 1.19
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 438 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 1: 103 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 5: 26 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 4 (810 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 613 (75.7%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 0.48
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 1: 66 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 2: 59 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 5: 54 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 647 (79.9%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 0.51
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 1: 121 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 21 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 5: 16 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 5 (734 samples):
-2025-12-14 19:29:24 | INFO     |   Correct: 23 (3.1%)
-2025-12-14 19:29:24 | INFO     |   Avg Error: 1.22
-2025-12-14 19:29:24 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:24 | INFO     |     Predicted as 4: 637 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 1: 50 times
-2025-12-14 19:29:24 | INFO     |     Predicted as 3: 17 times
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 5 (0.7%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 1.26
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 653 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 1: 59 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 15 times
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 33. True=5, Pred=1, Error=4, Conf: 0.254 | Nyilvános helyen történő üzemeltetés: Bármely a banki, illetőleg az otthoni szám...
-2025-12-14 19:29:24 | INFO     | 145. True=5, Pred=1, Error=4, Conf: 0.259 | A Vásárló a Vásárlás gombra történő kattintással kötelező érvényű és annak MMM á...
-2025-12-14 19:29:24 | INFO     | 185. True=5, Pred=1, Error=4, Conf: 0.265 | Sikeres tranzakció esetén Szolgáltató az egyes elfogadási módozatokra vonatkozó ...
-2025-12-14 19:29:24 | INFO     | 288. True=5, Pred=1, Error=4, Conf: 0.254 | Nyilvános helyen történő üzemeltetés: Bármely a banki, illetőleg az otthoni szám...
-2025-12-14 19:29:24 | INFO     | 290. True=5, Pred=1, Error=4, Conf: 0.239 | PIN kód (Personal Identification Number): Az a szigorú biztonsági előírások mell...
-2025-12-14 19:29:24 | INFO     | 407. True=1, Pred=5, Error=4, Conf: 0.222 | Az Előfizetői Szerződés jelenlévők között üzlethelyiségben a Szolgáltató által f...
-2025-12-14 19:29:24 | INFO     | 408. True=1, Pred=5, Error=4, Conf: 0.206 | Szolgáltató rögzíti, egyúttal tájékoztatja az Előfizetőt, hogy az APN-t (Access ...
-2025-12-14 19:29:24 | INFO     | 463. True=5, Pred=1, Error=4, Conf: 0.300 | Az ÁSZF két részből áll: Törzsrész: az egyes Előfizetői szolgáltatásokra vonatko...
-2025-12-14 19:29:24 | INFO     | 502. True=5, Pred=1, Error=4, Conf: 0.301 | Igénylő: Előfizetői szerződés megkötésére vonatkozó Igény bejelentője.
-2025-12-14 19:29:24 | INFO     | 521. True=5, Pred=1, Error=4, Conf: 0.240 | Telekom számla: Telekom mobil és -otthoni szolgáltatásokra vonatkozó közös száml...
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 33. True=5, Pred=1, Error=4, Conf: 0.236 | Nyilvános helyen történő üzemeltetés: Bármely a banki, illetőleg az otthoni szám...
+2025-12-14 20:07:47 | INFO     | 139. True=5, Pred=1, Error=4, Conf: 0.243 | Media Markt Webáruház kifejezetten fenntartja a jogot a Vásárló Media Markt Webá...
+2025-12-14 20:07:47 | INFO     | 145. True=5, Pred=1, Error=4, Conf: 0.258 | A Vásárló a Vásárlás gombra történő kattintással kötelező érvényű és annak MMM á...
+2025-12-14 20:07:47 | INFO     | 185. True=5, Pred=1, Error=4, Conf: 0.259 | Sikeres tranzakció esetén Szolgáltató az egyes elfogadási módozatokra vonatkozó ...
+2025-12-14 20:07:47 | INFO     | 213. True=5, Pred=1, Error=4, Conf: 0.246 | Az általa nyújtott szolgáltatások előfeltételeinek fennállását, a szerződés- és ...
+2025-12-14 20:07:47 | INFO     | 288. True=5, Pred=1, Error=4, Conf: 0.236 | Nyilvános helyen történő üzemeltetés: Bármely a banki, illetőleg az otthoni szám...
+2025-12-14 20:07:47 | INFO     | 290. True=5, Pred=1, Error=4, Conf: 0.254 | PIN kód (Personal Identification Number): Az a szigorú biztonsági előírások mell...
+2025-12-14 20:07:47 | INFO     | 295. True=5, Pred=1, Error=4, Conf: 0.287 | 2.2 Az Ügyfél köteles rendelkezni az e-bank szolgáltatás igénybevételéhez szüksé...
+2025-12-14 20:07:47 | INFO     | 463. True=5, Pred=1, Error=4, Conf: 0.290 | Az ÁSZF két részből áll: Törzsrész: az egyes Előfizetői szolgáltatásokra vonatko...
+2025-12-14 20:07:47 | INFO     | 502. True=5, Pred=1, Error=4, Conf: 0.290 | Igénylő: Előfizetői szerződés megkötésére vonatkozó Igény bejelentője.
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:24 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | 1093. True=3, Pred=1, Conf=0.362 | Törzsrész: az egyes Előfizetői szolgáltatásokra vonatkozó általános jellegű rend...
-2025-12-14 19:29:24 | INFO     | 135. True=3, Pred=4, Conf=0.308 | A Media Markt Webáruházban vendégként történő vásárlás során a rendelés jóváhagy...
-2025-12-14 19:29:24 | INFO     | 1108. True=3, Pred=2, Conf=0.302 | Már kiépített hálózat esetében, ha a Szolgáltatás létesítésének vagy nyújtásának...
-2025-12-14 19:29:24 | INFO     | 502. True=5, Pred=1, Conf=0.301 | Igénylő: Előfizetői szerződés megkötésére vonatkozó Igény bejelentője.
-2025-12-14 19:29:24 | INFO     | 756. True=3, Pred=4, Conf=0.301 | Bankkártyás fizetés esetén a vásárlás minden esetben forintban történik, a vétel...
-2025-12-14 19:29:24 | INFO     | 
+2025-12-14 20:07:47 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 1101. True=3, Pred=1, Conf=0.310 | A Szolgáltatás nyújtásáról a Szolgáltató és az Előfizető, illetve a Szolgáltatás...
+2025-12-14 20:07:47 | INFO     | 256. True=2, Pred=1, Conf=0.301 | Amennyiben az Előfizető a vagyonában bekövetkezett kár megtérítésére vonatkozó k...
+2025-12-14 20:07:47 | INFO     | 341. True=2, Pred=1, Conf=0.298 | 1.3. Jelen ÁSZF az Eladó által nyújtott teljesítésekre és egyéb szerződéses köte...
+2025-12-14 20:07:47 | INFO     | 151. True=4, Pred=1, Conf=0.298 | A Media Markt Webáruház többek között szexuális termékeket (pl. erotikus fehérne...
+2025-12-14 20:07:47 | INFO     | 333. True=3, Pred=1, Conf=0.297 | 5.9.2. Bankkártyája adatainak megadásával az ÜgyfélVásárló megerősíti, hogy a Pa...
+2025-12-14 20:07:47 | INFO     | 
 
 
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:24 | INFO     | EVALUATING: Gradient Boosting
-2025-12-14 19:29:24 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | Gradient Boosting - Test Results
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | Accuracy: 0.2532
-2025-12-14 19:29:25 | INFO     | F1 Macro: 0.1706
-2025-12-14 19:29:25 | INFO     | F1 Weighted: 0.2045
-2025-12-14 19:29:25 | INFO     | Precision Macro: 0.2589
-2025-12-14 19:29:25 | INFO     | Recall Macro: 0.2076
-2025-12-14 19:29:25 | INFO     | MAE: 1.1169
-2025-12-14 19:29:25 | INFO     | Cohen's Kappa: -0.0001
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | EVALUATING: Gradient Boosting
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | Gradient Boosting - Test Results
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | Accuracy: 0.2887
+2025-12-14 20:07:47 | INFO     | F1 Macro: 0.1447
+2025-12-14 20:07:47 | INFO     | F1 Weighted: 0.1808
+2025-12-14 20:07:47 | INFO     | Precision Macro: 0.2083
+2025-12-14 20:07:47 | INFO     | Recall Macro: 0.2119
+2025-12-14 20:07:47 | INFO     | MAE: 0.9907
+2025-12-14 20:07:47 | INFO     | Cohen's Kappa: 0.0078
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
 Confusion Matrix:
-2025-12-14 19:29:25 | INFO     | 
-[[  2  44  11  66   0]
- [  1  95  47 188   2]
- [  1 144  97 334  15]
- [  2 231 107 446  24]
- [  1 151  68 498  16]]
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | 
+[[  1  20   8  94   0]
+ [  0  67  18 248   0]
+ [  2  89  23 477   0]
+ [  0 114  39 657   0]
+ [  0  72  20 642   0]]
+2025-12-14 20:07:47 | INFO     | 
 Classification Report:
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | 
               precision    recall  f1-score   support
 
-           1       0.29      0.02      0.03       123
-           2       0.14      0.29      0.19       333
-           3       0.29      0.16      0.21       591
-           4       0.29      0.55      0.38       810
-           5       0.28      0.02      0.04       734
+           1       0.33      0.01      0.02       123
+           2       0.19      0.20      0.19       333
+           3       0.21      0.04      0.07       591
+           4       0.31      0.81      0.45       810
+           5       0.00      0.00      0.00       734
 
-    accuracy                           0.25      2591
-   macro avg       0.26      0.21      0.17      2591
-weighted avg       0.27      0.25      0.20      2591
+    accuracy                           0.29      2591
+   macro avg       0.21      0.21      0.14      2591
+weighted avg       0.19      0.29      0.18      2591
 
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:25 | INFO     | PER-SAMPLE ANALYSIS: Gradient Boosting
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | PER-SAMPLE ANALYSIS: Gradient Boosting
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
 Total samples: 2591
-2025-12-14 19:29:25 | INFO     | Correct predictions: 656 (25.3%)
-2025-12-14 19:29:25 | INFO     | Average error: 1.117
-2025-12-14 19:29:25 | INFO     | Max error: 4
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | Correct predictions: 748 (28.9%)
+2025-12-14 20:07:47 | INFO     | Average error: 0.991
+2025-12-14 20:07:47 | INFO     | Max error: 3
+2025-12-14 20:07:47 | INFO     | 
 Error Distribution:
-2025-12-14 19:29:25 | INFO     |   Error 0: 656 samples (25.3%)
-2025-12-14 19:29:25 | INFO     |   Error 1: 1199 samples (46.3%)
-2025-12-14 19:29:25 | INFO     |   Error 2: 514 samples (19.8%)
-2025-12-14 19:29:25 | INFO     |   Error 3: 221 samples (8.5%)
-2025-12-14 19:29:25 | INFO     |   Error 4: 1 samples (0.0%)
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Error 0: 748 samples (28.9%)
+2025-12-14 20:07:47 | INFO     |   Error 1: 1285 samples (49.6%)
+2025-12-14 20:07:47 | INFO     |   Error 2: 392 samples (15.1%)
+2025-12-14 20:07:47 | INFO     |   Error 3: 166 samples (6.4%)
+2025-12-14 20:07:47 | INFO     | 
 Accuracy by True Label:
-2025-12-14 19:29:25 | INFO     |   Label 1: 1.6% (2/123)
-2025-12-14 19:29:25 | INFO     |   Label 2: 28.5% (95/333)
-2025-12-14 19:29:25 | INFO     |   Label 3: 16.4% (97/591)
-2025-12-14 19:29:25 | INFO     |   Label 4: 55.1% (446/810)
-2025-12-14 19:29:25 | INFO     |   Label 5: 2.2% (16/734)
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Label 1: 0.8% (1/123)
+2025-12-14 20:07:47 | INFO     |   Label 2: 20.1% (67/333)
+2025-12-14 20:07:47 | INFO     |   Label 3: 3.9% (23/591)
+2025-12-14 20:07:47 | INFO     |   Label 4: 81.1% (657/810)
+2025-12-14 20:07:47 | INFO     |   Label 5: 0.0% (0/734)
+2025-12-14 20:07:47 | INFO     | 
 Most Common Confusions (True -> Predicted):
-2025-12-14 19:29:25 | INFO     |   5 -> 4: 498 times
-2025-12-14 19:29:25 | INFO     |   3 -> 4: 334 times
-2025-12-14 19:29:25 | INFO     |   4 -> 2: 231 times
-2025-12-14 19:29:25 | INFO     |   2 -> 4: 188 times
-2025-12-14 19:29:25 | INFO     |   5 -> 2: 151 times
-2025-12-14 19:29:25 | INFO     |   3 -> 2: 144 times
-2025-12-14 19:29:25 | INFO     |   4 -> 3: 107 times
-2025-12-14 19:29:25 | INFO     |   5 -> 3: 68 times
-2025-12-14 19:29:25 | INFO     |   1 -> 4: 66 times
-2025-12-14 19:29:25 | INFO     |   2 -> 3: 47 times
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   5 -> 4: 642 times
+2025-12-14 20:07:47 | INFO     |   3 -> 4: 477 times
+2025-12-14 20:07:47 | INFO     |   2 -> 4: 248 times
+2025-12-14 20:07:47 | INFO     |   4 -> 2: 114 times
+2025-12-14 20:07:47 | INFO     |   1 -> 4: 94 times
+2025-12-14 20:07:47 | INFO     |   3 -> 2: 89 times
+2025-12-14 20:07:47 | INFO     |   5 -> 2: 72 times
+2025-12-14 20:07:47 | INFO     |   4 -> 3: 39 times
+2025-12-14 20:07:47 | INFO     |   1 -> 2: 20 times
+2025-12-14 20:07:47 | INFO     |   5 -> 3: 20 times
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:25 | INFO     | PER-LABEL METRICS: Gradient Boosting
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | 
-2025-12-14 19:29:25 | INFO     | Label    Precision    Recall       F1           Support   
-2025-12-14 19:29:25 | INFO     | ------------------------------------------------------------
-2025-12-14 19:29:25 | INFO     | 1        0.286        0.016        0.031        123       
-2025-12-14 19:29:25 | INFO     | 2        0.143        0.285        0.190        333       
-2025-12-14 19:29:25 | INFO     | 3        0.294        0.164        0.211        591       
-2025-12-14 19:29:25 | INFO     | 4        0.291        0.551        0.381        810       
-2025-12-14 19:29:25 | INFO     | 5        0.281        0.022        0.040        734       
-2025-12-14 19:29:25 | INFO     | 
-2025-12-14 19:29:25 | INFO     | Macro Avg 0.259        0.208        0.171       
-2025-12-14 19:29:25 | INFO     | Weighted 0.270        0.253        0.205       
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | PER-LABEL METRICS: Gradient Boosting
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
+2025-12-14 20:07:47 | INFO     | Label    Precision    Recall       F1           Support   
+2025-12-14 20:07:47 | INFO     | ------------------------------------------------------------
+2025-12-14 20:07:47 | INFO     | 1        0.333        0.008        0.016        123       
+2025-12-14 20:07:47 | INFO     | 2        0.185        0.201        0.193        333       
+2025-12-14 20:07:47 | INFO     | 3        0.213        0.039        0.066        591       
+2025-12-14 20:07:47 | INFO     | 4        0.310        0.811        0.449        810       
+2025-12-14 20:07:47 | INFO     | 5        0.000        0.000        0.000        734       
+2025-12-14 20:07:47 | INFO     | 
+2025-12-14 20:07:47 | INFO     | Macro Avg 0.208        0.212        0.145       
+2025-12-14 20:07:47 | INFO     | Weighted 0.185        0.289        0.181       
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:25 | INFO     | ERROR ANALYSIS BY TRUE LABEL
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | ERROR ANALYSIS BY TRUE LABEL
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
 True Label = 1 (123 samples):
-2025-12-14 19:29:25 | INFO     |   Correct: 2 (1.6%)
-2025-12-14 19:29:25 | INFO     |   Avg Error: 2.15
-2025-12-14 19:29:25 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:25 | INFO     |     Predicted as 4: 66 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 2: 44 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 3: 11 times
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 1 (0.8%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 2.59
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 94 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 2: 20 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 8 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 2 (333 samples):
-2025-12-14 19:29:25 | INFO     |   Correct: 95 (28.5%)
-2025-12-14 19:29:25 | INFO     |   Avg Error: 1.29
-2025-12-14 19:29:25 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:25 | INFO     |     Predicted as 4: 188 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 3: 47 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 5: 2 times
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 67 (20.1%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 1.54
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 248 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 18 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 3 (591 samples):
-2025-12-14 19:29:25 | INFO     |   Correct: 97 (16.4%)
-2025-12-14 19:29:25 | INFO     |   Avg Error: 0.86
-2025-12-14 19:29:25 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:25 | INFO     |     Predicted as 4: 334 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 2: 144 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 5: 15 times
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 23 (3.9%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 0.96
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 477 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 2: 89 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 1: 2 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 4 (810 samples):
-2025-12-14 19:29:25 | INFO     |   Correct: 446 (55.1%)
-2025-12-14 19:29:25 | INFO     |   Avg Error: 0.74
-2025-12-14 19:29:25 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:25 | INFO     |     Predicted as 2: 231 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 3: 107 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 5: 24 times
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 657 (81.1%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 0.33
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 2: 114 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 39 times
+2025-12-14 20:07:47 | INFO     | 
 True Label = 5 (734 samples):
-2025-12-14 19:29:25 | INFO     |   Correct: 16 (2.2%)
-2025-12-14 19:29:25 | INFO     |   Avg Error: 1.49
-2025-12-14 19:29:25 | INFO     |   Most Common Mistakes:
-2025-12-14 19:29:25 | INFO     |     Predicted as 4: 498 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 2: 151 times
-2025-12-14 19:29:25 | INFO     |     Predicted as 3: 68 times
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     |   Correct: 0 (0.0%)
+2025-12-14 20:07:47 | INFO     |   Avg Error: 1.22
+2025-12-14 20:07:47 | INFO     |   Most Common Mistakes:
+2025-12-14 20:07:47 | INFO     |     Predicted as 4: 642 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 2: 72 times
+2025-12-14 20:07:47 | INFO     |     Predicted as 3: 20 times
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:25 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | 544. True=5, Pred=1, Error=4, Conf: 0.688 | 1.8. A Korm. rendelet szerinti előzetes tájékoztatás
-2025-12-14 19:29:25 | INFO     | 10. True=5, Pred=2, Error=3, Conf: 0.724 | 2. Az ügylettel összefüggő egymáshoz intézett kérdésekre kötelesek legkésőbb 30 ...
-2025-12-14 19:29:25 | INFO     | 14. True=1, Pred=4, Error=3, Conf: 0.652 | 8. Az OTP Bank Nyrt. nem Magyarország területén, illetve nem Magyarország joghat...
-2025-12-14 19:29:25 | INFO     | 67. True=1, Pred=4, Error=3, Conf: 0.681 | 8. Az OTP Bank Nyrt. a nem Magyarország területén, és nem Magyarország joghatósá...
-2025-12-14 19:29:25 | INFO     | 70. True=5, Pred=2, Error=3, Conf: 0.724 | 2. Az ügylettel összefüggő egymáshoz intézett kérdésekre kötelesek legkésőbb 30 ...
-2025-12-14 19:29:25 | INFO     | 80. True=5, Pred=2, Error=3, Conf: 0.875 | 23.1 Az Ügyfél kijelenti, hogy ismeri és betartja az OTP Bankcsoport Szankciós P...
-2025-12-14 19:29:25 | INFO     | 97. True=1, Pred=4, Error=3, Conf: 0.921 | 12. A XII. 10. a) és c) pontjától eltérően az OBA által nyújtott biztosítás kite...
-2025-12-14 19:29:25 | INFO     | 101. True=5, Pred=2, Error=3, Conf: 0.543 | Jelen Fogyasztói ÁSZF csak a fogyasztónak minősülő vásárlókra vonatkozik. Fogyas...
-2025-12-14 19:29:25 | INFO     | 120. True=5, Pred=2, Error=3, Conf: 0.743 | Hibás teljesítés esetén a Fogyasztó legerősebb joga a jogszabályon alapuló kötel...
-2025-12-14 19:29:25 | INFO     | 195. True=5, Pred=2, Error=3, Conf: 0.912 | Szolgáltató kötelezettséget vállal arra, hogy Intézmény működésével kapcsolatban...
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | TOP 10 HARDEST SAMPLES (Largest Errors)
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 14. True=1, Pred=4, Error=3, Conf: 0.658 | 8. Az OTP Bank Nyrt. nem Magyarország területén, illetve nem Magyarország joghat...
+2025-12-14 20:07:47 | INFO     | 40. True=5, Pred=2, Error=3, Conf: 0.422 | 2.3 Az ÜgyfélFelhasználó az e-bank szolgáltatás keretében banki szolgáltatásokat...
+2025-12-14 20:07:47 | INFO     | 67. True=1, Pred=4, Error=3, Conf: 0.611 | 8. Az OTP Bank Nyrt. a nem Magyarország területén, és nem Magyarország joghatósá...
+2025-12-14 20:07:47 | INFO     | 68. True=1, Pred=4, Error=3, Conf: 0.323 | 13. A pénzügyi és egyéb szolgáltatók azonosítási feladatához kapcsolódó adatszol...
+2025-12-14 20:07:47 | INFO     | 80. True=5, Pred=2, Error=3, Conf: 0.435 | 23.1 Az Ügyfél kijelenti, hogy ismeri és betartja az OTP Bankcsoport Szankciós P...
+2025-12-14 20:07:47 | INFO     | 97. True=1, Pred=4, Error=3, Conf: 0.552 | 12. A XII. 10. a) és c) pontjától eltérően az OBA által nyújtott biztosítás kite...
+2025-12-14 20:07:47 | INFO     | 101. True=5, Pred=2, Error=3, Conf: 0.438 | Jelen Fogyasztói ÁSZF csak a fogyasztónak minősülő vásárlókra vonatkozik. Fogyas...
+2025-12-14 20:07:47 | INFO     | 120. True=5, Pred=2, Error=3, Conf: 0.392 | Hibás teljesítés esetén a Fogyasztó legerősebb joga a jogszabályon alapuló kötel...
+2025-12-14 20:07:47 | INFO     | 192. True=5, Pred=2, Error=3, Conf: 0.284 | Ha a Kártyabirtokos nem ismeri el a tranzakció jogosságát és az Intézmény a Kárt...
+2025-12-14 20:07:47 | INFO     | 296. True=5, Pred=2, Error=3, Conf: 0.422 | 2.3 Az ÜgyfélFelhasználó az e-bank szolgáltatás keretében banki szolgáltatásokat...
+2025-12-14 20:07:47 | INFO     | 
 ============================================================
-2025-12-14 19:29:25 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | 244. True=5, Pred=4, Conf=0.991 | JOGELLENES TARTALOM: bármely olyan információ, amely önmagában vagy egy tevékeny...
-2025-12-14 19:29:25 | INFO     | 52. True=2, Pred=4, Conf=0.990 | 3.5 A Bank az e-bank azonosító kártyához PIN kódot mellékel, amelyet az Ügyfél z...
-2025-12-14 19:29:25 | INFO     | 642. True=2, Pred=4, Conf=0.990 | 3.5 A Bank az e-bank azonosító kártyához PIN kódot mellékel, amelyet az Ügyfél z...
-2025-12-14 19:29:25 | INFO     | 988. True=2, Pred=4, Conf=0.990 | 3.5 A Bank az e-bank azonosító kártyához PIN kódot mellékel, amelyet az Ügyfél z...
-2025-12-14 19:29:25 | INFO     | 1226. True=3, Pred=4, Conf=0.990 | 3.5 A Bank az e-bank azonosító kártyához PIN kódot mellékel, amelyet az Ügyfél z...
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | TOP 5 CONFIDENT MISTAKES (High Confidence, Wrong)
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 375. True=5, Pred=4, Conf=0.741 | 12.3. A Vevő a Ptk. 6:138. -a alapján fenntartja a jogát arra, hogy teljesítést ...
+2025-12-14 20:07:47 | INFO     | 57. True=5, Pred=4, Conf=0.724 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
+2025-12-14 20:07:47 | INFO     | 861. True=5, Pred=4, Conf=0.724 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
+2025-12-14 20:07:47 | INFO     | 1231. True=5, Pred=4, Conf=0.724 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
+2025-12-14 20:07:47 | INFO     | 1329. True=5, Pred=4, Conf=0.724 | 3.10 A Bank nem vállal felelősséget a szolgáltatások nyújtása során felmerült te...
+2025-12-14 20:07:47 | INFO     | 
 
 ============================================================
-2025-12-14 19:29:25 | INFO     | MODEL COMPARISON SUMMARY
-2025-12-14 19:29:25 | INFO     | ============================================================
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | MODEL COMPARISON SUMMARY
+2025-12-14 20:07:47 | INFO     | ============================================================
+2025-12-14 20:07:47 | INFO     | 
 Model                  Accuracy   F1 Macro  F1 Weighted      MAE    Kappa
-2025-12-14 19:29:25 | INFO     | ---------------------------------------------------------------------------
-2025-12-14 19:29:25 | INFO     | Baseline                 0.2420     0.1858       0.1981   1.1949   0.0114
-2025-12-14 19:29:25 | INFO     | Xgboost                  0.3088     0.1109       0.1589   0.9078   0.0020
-2025-12-14 19:29:25 | INFO     | Random Forest            0.2771     0.1668       0.1933   1.0810   0.0115
-2025-12-14 19:29:25 | INFO     | Gradient Boosting        0.2532     0.1706       0.2045   1.1169  -0.0001
-2025-12-14 19:29:25 | INFO     | 
-Best model (by F1 Macro): baseline (0.1858)
-2025-12-14 19:29:25 | INFO     |   xgboost: [-] Below baseline (diff: -0.0749)
-2025-12-14 19:29:25 | INFO     |   random_forest: [-] Below baseline (diff: -0.0190)
-2025-12-14 19:29:25 | INFO     |   gradient_boosting: [-] Below baseline (diff: -0.0152)
-2025-12-14 19:29:25 | INFO     | 
+2025-12-14 20:07:47 | INFO     | ---------------------------------------------------------------------------
+2025-12-14 20:07:47 | INFO     | Baseline                 0.2431     0.1851       0.1973   1.1972   0.0104
+2025-12-14 20:07:47 | INFO     | Xgboost                  0.3126     0.0953       0.1489   0.9108   0.0000
+2025-12-14 20:07:47 | INFO     | Random Forest            0.2706     0.1301       0.1663   1.1146   0.0035
+2025-12-14 20:07:47 | INFO     | Gradient Boosting        0.2887     0.1447       0.1808   0.9907   0.0078
+2025-12-14 20:07:47 | INFO     | 
+Best model (by Accuracy): xgboost (0.3126)
+2025-12-14 20:07:47 | INFO     |   xgboost: [+] BEATS BASELINE (diff: +0.0695)
+2025-12-14 20:07:47 | INFO     |   random_forest: [+] BEATS BASELINE (diff: +0.0274)
+2025-12-14 20:07:47 | INFO     |   gradient_boosting: [+] BEATS BASELINE (diff: +0.0455)
+2025-12-14 20:07:47 | INFO     | 
 
 Generating evaluation plots...
-2025-12-14 19:29:25 | INFO     | Saved confusion matrices to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\confusion_matrices.png
-2025-12-14 19:29:26 | INFO     | Saved model comparison to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\model_comparison.png
-2025-12-14 19:29:26 | INFO     | Saved evaluation results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\evaluation_results.json
-2025-12-14 19:29:26 | INFO     | Saved baseline per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\baseline_per_sample_results.csv
-2025-12-14 19:29:26 | INFO     | Saved xgboost per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\xgboost_per_sample_results.csv
-2025-12-14 19:29:26 | INFO     | Saved random_forest per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\random_forest_per_sample_results.csv
-2025-12-14 19:29:26 | INFO     | Saved gradient_boosting per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\gradient_boosting_per_sample_results.csv
-2025-12-14 19:29:26 | INFO     | 
+2025-12-14 20:07:48 | INFO     | Saved confusion matrices to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\confusion_matrices.png
+2025-12-14 20:07:48 | INFO     | Saved model comparison to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\model_comparison.png
+2025-12-14 20:07:48 | INFO     | Saved evaluation results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\evaluation_results.json
+2025-12-14 20:07:48 | INFO     | Saved baseline per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\baseline_per_sample_results.csv
+2025-12-14 20:07:48 | INFO     | Saved xgboost per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\xgboost_per_sample_results.csv
+2025-12-14 20:07:48 | INFO     | Saved random_forest per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\random_forest_per_sample_results.csv
+2025-12-14 20:07:48 | INFO     | Saved gradient_boosting per-sample results to C:\Users\user\Documents\GitHub\Legal-Text-Decoder\models\evaluation\gradient_boosting_per_sample_results.csv
+2025-12-14 20:07:48 | INFO     | 
 ============================================================
-2025-12-14 19:29:26 | INFO     | EVALUATION COMPLETED SUCCESSFULLY
-2025-12-14 19:29:26 | INFO     | ============================================================
+2025-12-14 20:07:48 | INFO     | EVALUATION COMPLETED SUCCESSFULLY
+2025-12-14 20:07:48 | INFO     | ============================================================

@@ -575,8 +575,8 @@ def main():
         )
     
     # Find best model
-    best_model = max(all_metrics.items(), key=lambda x: x[1]['cv_f1_macro'])
-    logger.info(f"\nBest model (by CV F1): {best_model[0]} ({best_model[1]['cv_f1_macro']:.4f})")
+    best_model = max(all_metrics.items(), key=lambda x: x[1]['cv_accuracy'])
+    logger.info(f"\nBest model (by CV Accuracy): {best_model[0]} ({best_model[1]['cv_accuracy']:.4f})")
     
     # Save overall summary
     summary_path = MODEL_DIR / "training_summary.json"
